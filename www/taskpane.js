@@ -18,7 +18,17 @@ async function run() {
     return context.sync().then(function () {
         // Send Word document content to Shiny
         Shiny.onInputChange("body_text", body.text);
-        document.getElementById("check_button").innerHTML = "Statcheck me again!"
+        document.getElementById("check_button").innerHTML = "Run again"
     });
   });
+}
+
+function collapse(button) {
+  button.classList.toggle("clicked");
+  var content = button.nextElementSibling;
+  if (content.style.display === "block") {
+    content.style.display = "none";
+  } else {
+    content.style.display = "block";
+  }
 }

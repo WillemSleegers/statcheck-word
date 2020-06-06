@@ -92,3 +92,39 @@ b {
   margin: 0 auto;
   margin-top: 2rem;
 }
+
+#results h5 {
+  margin-top: 15px;
+}
+
+.icon {
+  display: inline-block;
+  width: 18px;
+}
+
+.collapsible {
+  cursor: pointer;
+  margin-top: 3px;
+  padding: 5px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  background-color: #F5F5F5;
+  border-bottom: 1px solid transparent;
+}
+
+.clicked, .collapsible:hover {
+  background-color: #e5e5e5;
+}
+
+.test_content {
+  display: none;
+  overflow: hidden;
+  border: 1px solid transparent;
+  border-color: #F5F5F5;
+}
+
+.test_content p {
+  margin: 5px 10px 5px 10px;
+}

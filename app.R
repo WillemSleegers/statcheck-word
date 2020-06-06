@@ -7,7 +7,7 @@ library(statcheck)
 library(DT)
 
 # Set options
-options(shiny.port = 7775, shiny.host = "127.0.0.1")
+options(shiny.port = 7775)
 
 # UI ----------------------------------------------------------------------
 
@@ -27,12 +27,15 @@ ui <- fluidPage(
     tags$link(
         rel = "stylesheet", 
         type = "text/css", 
+        href = paste0("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/",
+          "4.7.0/css/font-awesome.min.css")
+      ),
+    tags$link(
+        rel = "stylesheet", 
+        type = "text/css", 
         href = "taskpane.css"
       )
   ),
-  
-  # Include Word addin JS
-  tags$script(src = "taskpane.js"),
   
   # Include statcheck image
   img(id = "statcheck-logo", src = "assets/statcheck.png"),
@@ -40,14 +43,15 @@ ui <- fluidPage(
   tabsetPanel(type = "tabs",
     tabPanel("Home",
       # Output: Display found statistics in a table
-      dataTableOutput(outputId = "results"),
-      
-      # Input: One-tailed tests?
-      checkboxInput("one_tailed", 
-        "Try to identify and correct for one-tailed tests?", FALSE),
+      uiOutput(outputId = "results"),
       
       # Input: Check document button
-      actionLink("check_button", "Statcheck me!")
+      actionButton("check_button", "Run statcheck"),
+      
+      # Settings
+      h5("Settings"),
+      # Input: One-tailed tests?
+      checkboxInput("one_tailed", "Try to correct for one-tailed tests?", FALSE)
     ),
     tabPanel("Documentation",
       includeMarkdown("documentation.md")
@@ -55,47 +59,64 @@ ui <- fluidPage(
     tabPanel("Contact",
       p("Contact")
     )
-  )
+  ),
+  
+    # Include Word addin JS
+  tags$script(src = "taskpane.js")
 )
 
 # Server ------------------------------------------------------------------
 
 server <- function(input, output) {
   
-  output$results <- renderDataTable({
+  output$results <- renderUI({
     req(input$body_text)
     
     # Extract statistics
     statistics <- statcheck(input$body_text, OneTailedTxt = input$one_tailed)
+    # statistics <- statcheck("T(21) = 2.12, p < .04, T(15) = 4.3, p < .04")
     
-    # Create the data for the output table
-    data <- data.frame(
-      test = statistics$Raw,
-      computed = statistics$Computed,
-      error = statistics$Error
-    )
+    # Extract the relevant bits we want to display to the user
+    tests <- statistics$Raw
+    computed_p_values <- statistics$Computed
+    errors <- statistics$Error
     
-    # Clean up the table
     # Format the computed p-values
-    data$computed <- ifelse(data$computed < .001, "< .001", 
-      round(data$computed, digits = 3))
-    
-    print(data$computed)
-    
+    computed_p_values <- ifelse(computed_p_values < .001, "< .001", 
+      round(computed_p_values, digits = 3))
+
     # Recode the error to yes/no
-    data$error <- ifelse(data$error == TRUE, "yes", "no")
+    errors <- ifelse(errors == TRUE, "yes", "no")
     
-    datatable(data, 
-        colnames = c("Statistical test", "Computed", "Error"),
-        options = list(dom = "t")
-      )
+    # Create UI
+    html <- c('<h5>Found tests:</h5>')
+    for (i in 1:length(tests)) {
+      test <- tests[i]
+      error <- errors[i]
+      p_value <- computed_p_values[i]
+      
+      html <- c(html, '<button type="button" class="collapsible" onclick="collapse(this)">')
+      if (error == "yes") {
+        html <- c(html, '<i class="icon fa fa-warning"></i>')
+      } else {
+        html <- c(html, '<i class="icon "></i>')
+      }
+      html <- c(html, test)
+      html <- c(html, '</button>')
+      html <- c(html, '<div class="test_content">')
+      html <- c(html, '<p>Computed p-value: ')
+      html <- c(html, p_value)
+      html <- c(html, '</p></div>')
+    }
+    
+    HTML(html)
   })
   
 }
 
 # Run app -----------------------------------------------------------------
 
-shinyApp(ui = ui, server = server,  )
+shinyApp(ui = ui, server = server)
 
 # Host app ----------------------------------------------------------------
 
