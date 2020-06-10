@@ -67,7 +67,7 @@ ui <- fluidPage(
 
 # Server ------------------------------------------------------------------
 
-server <- function(input, output) {
+server <- function(input, output, session) {
   
   output$results <- renderUI({
     req(input$body_text)
@@ -106,8 +106,13 @@ server <- function(input, output) {
       html <- c(html, '<div class="test_content">')
       html <- c(html, '<p>Computed p-value: ')
       html <- c(html, p_value)
-      html <- c(html, '</p></div>')
+      html <- c(html, '</p>')
+      html <- c(html, paste0('<button class="goto_button" id="goto_button_', i, 
+        '" onclick="go_to_test(this)">Go to test</button>'))
+      html <- c(html, '</div>')
     }
+    
+    session$sendCustomMessage("receive_tests", tests)
     
     HTML(html)
   })
