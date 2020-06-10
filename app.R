@@ -74,7 +74,7 @@ server <- function(input, output, session) {
     
     # Extract statistics
     statistics <- statcheck(input$body_text, OneTailedTxt = input$one_tailed)
-    # statistics <- statcheck("T(21) = 2.12, p < .04, T(15) = 4.3, p < .04")
+    # TODO: What if no tests are found?
     
     # Extract the relevant bits we want to display to the user
     tests <- statistics$Raw
@@ -85,9 +85,6 @@ server <- function(input, output, session) {
     computed_p_values <- ifelse(computed_p_values < .001, "< .001", 
       round(computed_p_values, digits = 3))
 
-    # Recode the error to yes/no
-    errors <- ifelse(errors == TRUE, "yes", "no")
-    
     # Create UI
     html <- c('<h5>Found tests:</h5>')
     for (i in 1:length(tests)) {
@@ -96,7 +93,7 @@ server <- function(input, output, session) {
       p_value <- computed_p_values[i]
       
       html <- c(html, '<button type="button" class="collapsible" onclick="collapse(this)">')
-      if (error == "yes") {
+      if (error) {
         html <- c(html, '<i class="icon fa fa-warning"></i>')
       } else {
         html <- c(html, '<i class="icon "></i>')
@@ -116,7 +113,6 @@ server <- function(input, output, session) {
     
     HTML(html)
   })
-  
 }
 
 # Run app -----------------------------------------------------------------

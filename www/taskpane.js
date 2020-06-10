@@ -25,7 +25,7 @@ async function run() {
 }
 
 Shiny.addCustomMessageHandler('receive_tests', function(x) {
-  tests = x;
+  tests.push(x);
 });
 
 async function go_to_test(button) {
@@ -33,8 +33,8 @@ async function go_to_test(button) {
     // Determine which button was clicked and thus which test the user wants to 
     // find
     var test_nr = button.id.match(/[0-9]+/)[0];
-    
-     // Search the document's body for the test
+  
+    // Search the document's body for the test
     let results = context.document.body.search(tests[test_nr - 1]);
     
     // Load the search results items
