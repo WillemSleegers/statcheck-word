@@ -67,15 +67,29 @@ As a general rule: `statcheck` flags result as an error when the reported *p*-va
 
 ### Where can I find more information about `statcheck`?<a name="moreinfo"></a>
 
-* The manual: <https://rpubs.com/michelenuijten/statcheckmanual>
-* The web app: <http://statcheck.io>
-* The R package: <http://cran.r-project.org/web/packages/statcheck/>
-* The paper: <https://link.springer.com/article/10.3758/s13428-015-0664-2>
-* The GitHub page: <https://github.com/MicheleNuijten/statcheck>
+* [The manual](https://rpubs.com/michelenuijten/statcheckmanual)
+* [The web app](http://statcheck.io)
+* [The R package](http://cran.r-project.org/web/packages/statcheck/)
+* [The paper](https://link.springer.com/article/10.3758/s13428-015-0664-2)
+* [The GitHub page](https://github.com/MicheleNuijten/statcheck)
 
 
 ### Who do I contact if I have additional questions?<a name="contact"></a>
-For questions about using `statcheck` in Word, contact Willem Sleegers (w.w.a.sleegers@uvt.nl).
+Trouble with `statcheck`? Contact Michèle. Trouble with the Word add-in? Contact Willem.
 
-For questions about `statcheck` in general, contact Michèle Nuijten (m.b.nuijten@uvt.nl).
+<!-- links to social media icons -->
+[1.1]: http://i.imgur.com/tXSoThF.png (twitter icon with padding)
 
+<i class="icon fa fa-twitter"></i>
+
+||Michèle Nuijten|
+-|----------------
+|@icn-twitter | <https://mbnuijten.com>
+|![alt text][1.1]| [\@MicheleNuijten](http://twitter.com/MicheleNuijten/)
+| | <https://github.com/MicheleNuijten>
+
+||Willem Sleegers|
+-|----------------
+| | <https://www.willemsleegers.com/>
+|![alt text][1.1] | [\@willemsleegers](https://twitter.com/willemsleegers)
+| | <https://github.com/WillemSleegers>
