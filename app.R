@@ -53,11 +53,11 @@ ui <- fluidPage(
       # Input: One-tailed tests?
       checkboxInput("one_tailed", "Try to correct for one-tailed tests?", FALSE)
     ),
-    tabPanel("How does it work?",
-      includeMarkdown("documentation.md")
-    ),
     tabPanel("FAQ",
       includeMarkdown("faq.md")
+    ),
+    tabPanel("Cite Us",
+             includeMarkdown("cite.md")
     )
   ),
   
