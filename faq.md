@@ -41,7 +41,7 @@ To fix any errors, go to your statistical software to check which of the three n
 * t(df) = value, p = value
 * F(df1, df2) = value, p = value
 * r(df) = value, p = value
-* $\chi^2$ (df, N = value) = value, p = value *(N is optional, $\Delta$G is also included, since it follows a $\chi^2$ distribution)*
+* &chi; (df, N = value) = value, p = value *(N is optional, $\Delta$G is also included, since it follows a $\chi^2$ distribution)*
 * Z = value, p = value 
 * Q (df) = value, p = value *(`statcheck` can read and distinguishes between Q, Qw / Q-within, and Qb / Q-between)*
 

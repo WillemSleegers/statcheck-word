@@ -11,9 +11,28 @@
      padding: 0;
  }
  
- ul {
+ .tab-content ul {
      margin: 0;
      padding: 0;
+     padding-left: 0.5em;
+     list-style-position: inside;
+ }
+ 
+ .tab-content ol {
+   margin: 0;
+   padding: 0;
+   list-style-position: inside;
+ }
+ 
+ .tab-content li {
+  text-indent: -1em;
+  padding-left: 1.5em;
+ }
+ 
+code {
+   color: inherit;
+   background: none;
+   padding: 0;
  }
  
  .ms-welcome__header {
