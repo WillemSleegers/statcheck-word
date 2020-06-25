@@ -86,13 +86,12 @@ In typical psychology journals, `statcheck` detects about 60% of the null hypoth
 
 ### Where can I find more information about `statcheck`?<a name="moreinfo"></a>
 
-* [The manual](https://rpubs.com/michelenuijten/statcheckmanual)
-* [The web app](http://statcheck.io)
-* [The R package](http://cran.r-project.org/web/packages/statcheck/)
-* [The paper](https://link.springer.com/article/10.3758/s13428-015-0664-2)
-* [The validity study](https://psyarxiv.com/tcxaj/)
-* [The GitHub page](https://github.com/MicheleNuijten/statcheck)
-
+* [The manual](https://rpubs.com/michelenuijten/statcheckmanual): a detailed instruction manual with information on what `statcheck` can and cannot do, information on how to install and use the `statcheck` R package, and more.
+* [The web app](http://statcheck.io): upload a paper in one click and get a table of all detected statistics, classified as consistent, an inconsistency or a decision inconsistency.
+* [The R package](http://cran.r-project.org/web/packages/statcheck/): the R package has additional functionality which allows you to change more settings and to scan entire folders of papers.
+* [The paper](https://link.springer.com/article/10.3758/s13428-015-0664-2): the seminal paper in which statcheck was introduced. We ran `statcheck` on over 30,000 psychology papers and report general inconsistency-prevalences over time and per journal.
+* [The validity study](https://psyarxiv.com/tcxaj/): we compared `statcheck`'s performance with manual checks and assessed its accuracy in classifying results as consistent/inconsistent
+* [The GitHub page](https://github.com/MicheleNuijten/statcheck): here you can find `statcheck`'s latest developments.
 
 ### Who do I contact if I have additional questions?<a name="contact"></a>
 Trouble with `statcheck`? Contact Michèle. Trouble with the Word add-in? Contact Willem.
