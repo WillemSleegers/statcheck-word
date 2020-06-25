@@ -37,6 +37,8 @@ By default, `statcheck` treats all tests as two-tailed. If you want to take into
 
 When this box is ticked, `statcheck` will search the entire text for the keywords "one-tailed", "one-sided", and "directional" (taking spacing issues etc. into account). When statcheck finds at least one of those keywords AND an initially inconsistent result would be consistent if it was a one-tailed test, then statcheck treats this case as a one-tailed test and counts it as consistent.
 
+Note that this correction for one-tailed tests only works if the one-tailed tests are explicitly identified as such in the text, with one of the keywords mentioned above. 
+
 ### Which results does `statcheck` detect? <a name="which"></a>
 
 `statcheck` searches for specific patterns and recognizes statistical results from correlations and t, F, &chi;&sup2;, Z tests and Q tests. `statcheck` can only read these results if the results are reported exactly according to the APA guidelines:
@@ -59,14 +61,21 @@ Some common reasons why `statcheck` doesn't detect some results:
 * the result is reported in a table. 
 
 
-### Why does `statcheck` flag a result as an error? <a name="whyerror"></a>
+### Why does `statcheck` say it's an error when I think it's not? <a name="whyerror"></a>
 
-As a general rule: `statcheck` flags result as an error when the reported *p*-value does not match the recalculated *p*-value. That means that the following situation may result in a `statcheck`-error:
+As a general rule: `statcheck` flags result as an error when the reported *p*-value does not match the recalculated *p*-value. However, there may be cases in which you deliberately reported an inconsistent result. For example:
 
-* one-tailed tests.
-* Bonferroni adjusted *p*-values
-* corrections for violations of assumptions
+1. you conducted a one-tailed test, but you did not explicitly state it was a one-tailed test using one of the keywords mentioned above
+2. you used a Bonferroni correction on your p-value (i.e., multiplied your p-value by the number of tests) to correct for multiple testing
+3. you corrected the degrees of freedom for a violation of an assumption (e.g., sphericity), but reported the unadjusted test statistic and p-value
 
+In all these cases, the reported p-value does not match the accompanying test statistic and degrees of freedom anymore, and causes statcheck to flag the result as a potential error.
+
+We would like to argue that in these cases, there is no reason to report a result as internally inconsistent. We would advise the following in the  scenarios above, respectively:
+
+1. explicitly identify which tests are one-tailed and which are two-tailed. This will increase the transparency and reproducibility of your text.
+2. when using a Bonferroni correction, correct your *alpha level* by dividing it by the number of tests, instead of multiplying the p-value. The latter results in internal inconsistencies, but could also result in impossible p-values larger than 1.
+3. when adjusting results for violations of assumptions, report the entire adjusted result, instead of only adjusting one element in the result (i.e., only the test statistic, degrees of freedom, or the p-value).
 
 ### Where can I find more information about `statcheck`?<a name="moreinfo"></a>
 
