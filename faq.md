@@ -2,12 +2,12 @@
 
 1. [What is `statcheck`?](#whatis)
 2. [How does it work?](#workings)
-3. [Example](#ex)
 3. [Which results does `statcheck` detect?](#which)
-4. [Why doesn't `statcheck` detect my statistics?](#ynodetect)
-5. [Why does `statcheck` flag a result as an error?](#whyerror)
-6. [Where can I find more information about `statcheck`?](#moreinfo)
-7. [Who do I contact if I have additional questions?](#contact)
+4. [What does the correction for one-tailed tests do?](#1tail)
+5. [Why doesn't `statcheck` detect my statistics?](#ynodetect)
+6. [Why does `statcheck` flag a result as an error?](#whyerror)
+7. [Where can I find more information about `statcheck`?](#moreinfo)
+8. [Who do I contact if I have additional questions?](#contact)
 
 
 ### What is `statcheck`? <a name="whatis"></a>
@@ -21,9 +21,7 @@
 2. Using the reported test statistic and degrees of freedom, `statcheck` recalculates the *p*-value. By default, the recalculated *p*-value is two-sided.
 3. `statcheck` compares the reported *p*-value with the recomputed *p*-value. If these two don't match, `statcheck` will flag the result as an error.
 
-### Example <a name="ex"></a>
-
-Say that you reported the following result: 
+For example, say that you reported the following result: 
 
 "The difference was significant, *t*(28) = 1.2, *p* < .05."
 
@@ -33,6 +31,11 @@ If you click on a result that `statcheck` flagged as an error, you can see the r
 
 To fix any errors, go to your statistical software to check which of the three numbers (test statistic, degrees of freedom, and/or *p*-value) you need to correct.
 
+### What does the correction for one-tailed tests do? <a name = "1tail"></a>
+
+By default, `statcheck` treats all tests as two-tailed. If you want to take into account one-tailed tests, you can check the box "Try to correct for one-tailed tests?". 
+
+When this box is ticked, `statcheck` will search the entire text for the keywords "one-tailed", "one-sided", and "directional" (taking spacing issues etc. into account). When statcheck finds at least one of those keywords AND an initially inconsistent result would be consistent if it was a one-tailed test, then statcheck treats this case as a one-tailed test and counts it as consistent.
 
 ### Which results does `statcheck` detect? <a name="which"></a>
 
