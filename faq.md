@@ -1,5 +1,3 @@
-#### Table of contents
-
 1. [What is `statcheck`?](#whatis)
 2. [How does it work?](#workings)
 3. [Which results does `statcheck` detect?](#which)
