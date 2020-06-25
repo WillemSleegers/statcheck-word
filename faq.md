@@ -6,8 +6,9 @@
 4. [What does the correction for one-tailed tests do?](#1tail)
 5. [Why doesn't `statcheck` detect my statistics?](#ynodetect)
 6. [Why does `statcheck` flag a result as an error?](#whyerror)
-7. [Where can I find more information about `statcheck`?](#moreinfo)
-8. [Who do I contact if I have additional questions?](#contact)
+7. [How accurate is `statcheck`?](#accuracy)
+8. [Where can I find more information about `statcheck`?](#moreinfo)
+9. [Who do I contact if I have additional questions?](#contact)
 
 
 ### What is `statcheck`? <a name="whatis"></a>
@@ -25,7 +26,7 @@ For example, say that you reported the following result:
 
 "The difference was significant, *t*(28) = 1.2, *p* < .05."
 
-If you click "Run `statcheck`", `statcheck` will recognize this as a statistical test. It will take the degrees of freedom (28) and test statistic (2.2) and recalculate the p-value: *p* = .24. This p-value does not match the reported p-value, so `statcheck` will flag this result as an error.
+If you click "Run `statcheck`", `statcheck` will recognize this as a statistical test. It will take the degrees of freedom (28) and test statistic (2.2) and recalculate the *p*-value: *p* = .24. This *p*-value does not match the reported *p*-value, so `statcheck` will flag this result as an error.
 
 If you click on a result that `statcheck` flagged as an error, you can see the recalculated *p*-value. Click on "Go to test"" to jump to the location of the test in your document. 
 
@@ -57,7 +58,7 @@ Note that this correction for one-tailed tests only works if the one-tailed test
 Some common reasons why `statcheck` doesn't detect some results:
 
 * the result was not reported according to APA style. This includes minor deviations such as square brackets instead of parentheses, or a semi-colon instead of a comma.
-* the result was not reported completely. `statcheck` needs three ingredients to detect a result and recalculate the p-value: the reported test statistic, degrees of freedom, and p-value. If one or more of these are missing, `statcheck` will not pick it up.
+* the result was not reported completely. `statcheck` needs three ingredients to detect a result and recalculate the *p*-value: the reported test statistic, degrees of freedom, and *p*-value. If one or more of these are missing, `statcheck` will not pick it up.
 * the result is reported in a table. 
 
 
@@ -66,16 +67,22 @@ Some common reasons why `statcheck` doesn't detect some results:
 As a general rule: `statcheck` flags result as an error when the reported *p*-value does not match the recalculated *p*-value. However, there may be cases in which you deliberately reported an inconsistent result. For example:
 
 1. you conducted a one-tailed test, but you did not explicitly state it was a one-tailed test using one of the keywords mentioned above
-2. you used a Bonferroni correction on your p-value (i.e., multiplied your p-value by the number of tests) to correct for multiple testing
-3. you corrected the degrees of freedom for a violation of an assumption (e.g., sphericity), but reported the unadjusted test statistic and p-value
+2. you used a Bonferroni correction on your *p*-value (i.e., multiplied your *p*-value by the number of tests) to correct for multiple testing
+3. you corrected the degrees of freedom for a violation of an assumption (e.g., sphericity), but reported the unadjusted test statistic and *p*-value
 
-In all these cases, the reported p-value does not match the accompanying test statistic and degrees of freedom anymore, and causes statcheck to flag the result as a potential error.
+In all these cases, the reported *p*-value does not match the accompanying test statistic and degrees of freedom anymore, and causes statcheck to flag the result as a potential error.
 
 We would like to argue that in these cases, there is no reason to report a result as internally inconsistent. We would advise the following in the  scenarios above, respectively:
 
 1. explicitly identify which tests are one-tailed and which are two-tailed. This will increase the transparency and reproducibility of your text.
-2. when using a Bonferroni correction, correct your *alpha level* by dividing it by the number of tests, instead of multiplying the p-value. The latter results in internal inconsistencies, but could also result in impossible p-values larger than 1.
-3. when adjusting results for violations of assumptions, report the entire adjusted result, instead of only adjusting one element in the result (i.e., only the test statistic, degrees of freedom, or the p-value).
+2. when using a Bonferroni correction, correct your *alpha level* by dividing it by the number of tests, instead of multiplying the *p*-value. The latter results in internal inconsistencies, but could also result in impossible *p*-values larger than 1.
+3. when adjusting results for violations of assumptions, report the entire adjusted result, instead of only adjusting one element in the result (i.e., only the test statistic, degrees of freedom, or the *p*-value).
+
+Of course it is also possible that `statcheck` really made a mistake and erroneously flagged a result as inconsistent. This can happen when `statcheck` does not correctly read and/or classify the test type of the extracted statistic. For more information about `statcheck`'s accuracy, see the next section.
+
+### How accurate is `statcheck`?<a name="accuracy"></a>
+
+In typical psychology journals, `statcheck` detects about 60% of the null hypothesis significance tests. In classifying extracted results as consistent or inconsistent, `statcheck` has an accuracy between 96.2% and 99.9%, depending on its settings. See [Nuijten et al., 2017](https://psyarxiv.com/tcxaj/) for details.
 
 ### Where can I find more information about `statcheck`?<a name="moreinfo"></a>
 
