@@ -26,7 +26,7 @@ For example, say that you reported the following result:
 
 If you click "Run `statcheck`", `statcheck` will recognize this as a statistical test. It will take the degrees of freedom (28) and test statistic (2.2) and recalculate the *p*-value: *p* = .24. This *p*-value does not match the reported *p*-value, so `statcheck` will flag this result as an error.
 
-If you click on a result that `statcheck` flagged as an error, you can see the recalculated *p*-value. Click on "Go to test"" to jump to the location of the test in your document. 
+If you click on a result that `statcheck` flagged as an error, you can see the recalculated *p*-value. Click on "Go to test" to jump to the location of the test in your document. 
 
 To fix any errors, go to your statistical software to check which of the three numbers (test statistic, degrees of freedom, and/or *p*-value) you need to correct.
 
