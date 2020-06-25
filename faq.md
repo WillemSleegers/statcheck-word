@@ -27,7 +27,7 @@ Say that you reported the following result:
 
 "The difference was significant, *t*(28) = 1.2, *p* < .05."
 
-If you click *"Run `statcheck`"*, `statcheck` will recognize this as a statistical test. It will take the degrees of freedom (28) and test statistic (2.2) and recalculate the p-value: *p* = .24. This p-value does not match the reported p-value, so `statcheck` will flag this result as an error.
+If you click "Run `statcheck`", `statcheck` will recognize this as a statistical test. It will take the degrees of freedom (28) and test statistic (2.2) and recalculate the p-value: *p* = .24. This p-value does not match the reported p-value, so `statcheck` will flag this result as an error.
 
 If you click on a result that `statcheck` flagged as an error, you can see the recalculated *p*-value. Click on "Go to test"" to jump to the location of the test in your document. 
 
@@ -36,12 +36,12 @@ To fix any errors, go to your statistical software to check which of the three n
 
 ### Which results does `statcheck` detect? <a name="which"></a>
 
-`statcheck` searches for specific patterns and recognizes statistical results from correlations and t, F, $\chi^2$, Z tests and Q tests. `statcheck` can only read these results if the results are reported exactly according to the APA guidelines:
+`statcheck` searches for specific patterns and recognizes statistical results from correlations and t, F, &chi;&sup2;, Z tests and Q tests. `statcheck` can only read these results if the results are reported exactly according to the APA guidelines:
 
 * t(df) = value, p = value
 * F(df1, df2) = value, p = value
 * r(df) = value, p = value
-* &chi; (df, N = value) = value, p = value *(N is optional, $\Delta$G is also included, since it follows a $\chi^2$ distribution)*
+* &chi;&sup2; (df, N = value) = value, p = value *(N is optional, &Delta;G is also included, since it follows a &chi;&sup2; distribution)*
 * Z = value, p = value 
 * Q (df) = value, p = value *(`statcheck` can read and distinguishes between Q, Qw / Q-within, and Qb / Q-between)*
 
