@@ -90,6 +90,7 @@ In typical psychology journals, `statcheck` detects about 60% of the null hypoth
 * [The web app](http://statcheck.io)
 * [The R package](http://cran.r-project.org/web/packages/statcheck/)
 * [The paper](https://link.springer.com/article/10.3758/s13428-015-0664-2)
+* [The validity study](https://psyarxiv.com/tcxaj/)
 * [The GitHub page](https://github.com/MicheleNuijten/statcheck)
 
 
