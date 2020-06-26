@@ -89,7 +89,7 @@ server <- function(input, output, session) {
     errors <- ifelse(errors == TRUE, "yes", "no")
     
     # Create UI
-    html <- c('<h5>Found tests:</h5>')
+    html <- c('<h5>Detected tests:</h5>')
     for (i in 1:length(tests)) {
       test <- tests[i]
       error <- errors[i]
