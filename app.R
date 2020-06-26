@@ -40,7 +40,7 @@ ui <- fluidPage(
   img(id = "statcheck-logo", src = "assets/statcheck.png"),
   
   tabsetPanel(type = "tabs",
-    tabPanel("Home",
+    tabPanel("statcheck",
       # Output: Display found statistics in a table
       uiOutput(outputId = "results"),
       
