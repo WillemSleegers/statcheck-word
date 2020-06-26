@@ -9,8 +9,12 @@
      height: 100%;
      margin: 0;
      padding: 0;
- }
- 
+}
+
+h3 {
+  padding-top: 0.5em;
+}
+
  .tab-content ul {
      margin: 0;
      padding: 0;

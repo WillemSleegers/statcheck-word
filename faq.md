@@ -9,11 +9,14 @@
 6. [Where can I find more information about `statcheck`?](#moreinfo)
 7. [Who do I contact if I have additional questions?](#contact)
 
+<a name="whatis"></a>
 
-### What is `statcheck`? <a name="whatis"></a>
+### What is `statcheck`? 
 `statcheck` is a "spellchecker" for statistics. It checks whether your *p*-values match their accompanying test statistic and degrees of freedom. 
 
-### How does it work? <a name="workings"></a>
+<a name="workings"></a>
+
+### How does it work? 
 
 `statcheck` works in roughly 3 steps:
 
@@ -21,7 +24,9 @@
 2. Using the reported test statistic and degrees of freedom, `statcheck` recalculates the *p*-value. By default, the recalculated *p*-value is two-sided.
 3. `statcheck` compares the reported *p*-value with the recomputed *p*-value. If these two don't match, `statcheck` will flag the result as an error.
 
-### Example <a name="ex"></a>
+<a name="ex"></a>
+
+### Example 
 
 Say that you reported the following result: 
 
@@ -33,8 +38,9 @@ If you click on a result that `statcheck` flagged as an error, you can see the r
 
 To fix any errors, go to your statistical software to check which of the three numbers (test statistic, degrees of freedom, and/or *p*-value) you need to correct.
 
+<a name="which"></a>
 
-### Which results does `statcheck` detect? <a name="which"></a>
+### Which results does `statcheck` detect? 
 
 `statcheck` searches for specific patterns and recognizes statistical results from correlations and t, F, $\chi^2$, Z tests and Q tests. `statcheck` can only read these results if the results are reported exactly according to the APA guidelines:
 
@@ -47,7 +53,9 @@ To fix any errors, go to your statistical software to check which of the three n
 
 `statcheck` takes into account that test statistics and p values may be exactly (=) or inexactly (< or >) reported. Different spacing has also been taken into account.
 
-### Why doesn't `statcheck` detect my statistics? <a name="ynodetect"></a>
+<a name="ynodetect"></a>
+
+### Why doesn't `statcheck` detect my statistics? 
 
 Some common reasons why `statcheck` doesn't detect some results:
 
@@ -55,8 +63,9 @@ Some common reasons why `statcheck` doesn't detect some results:
 * the result was not reported completely. `statcheck` needs three ingredients to detect a result and recalculate the p-value: the reported test statistic, degrees of freedom, and p-value. If one or more of these are missing, `statcheck` will not pick it up.
 * the result is reported in a table. 
 
+<a name="whyerror"></a>
 
-### Why does `statcheck` flag a result as an error? <a name="whyerror"></a>
+### Why does `statcheck` flag a result as an error? 
 
 As a general rule: `statcheck` flags result as an error when the reported *p*-value does not match the recalculated *p*-value. That means that the following situation may result in a `statcheck`-error:
 
@@ -64,8 +73,9 @@ As a general rule: `statcheck` flags result as an error when the reported *p*-va
 * Bonferroni adjusted *p*-values
 * corrections for violations of assumptions
 
+<a name="moreinfo"></a>
 
-### Where can I find more information about `statcheck`?<a name="moreinfo"></a>
+### Where can I find more information about `statcheck`?
 
 * [The manual](https://rpubs.com/michelenuijten/statcheckmanual)
 * [The web app](http://statcheck.io)
@@ -73,23 +83,7 @@ As a general rule: `statcheck` flags result as an error when the reported *p*-va
 * [The paper](https://link.springer.com/article/10.3758/s13428-015-0664-2)
 * [The GitHub page](https://github.com/MicheleNuijten/statcheck)
 
+<a name="contact"></a>
 
-### Who do I contact if I have additional questions?<a name="contact"></a>
+### Who do I contact if I have additional questions?
 Trouble with `statcheck`? Contact Michèle. Trouble with the Word add-in? Contact Willem.
-
-<!-- links to social media icons -->
-[1.1]: http://i.imgur.com/tXSoThF.png (twitter icon with padding)
-
-<i class="icon fa fa-twitter"></i>
-
-||Michèle Nuijten|
--|----------------
-|@icn-twitter | <https://mbnuijten.com>
-|![alt text][1.1]| [\@MicheleNuijten](http://twitter.com/MicheleNuijten/)
-| | <https://github.com/MicheleNuijten>
-
-||Willem Sleegers|
--|----------------
-| | <https://www.willemsleegers.com/>
-|![alt text][1.1] | [\@willemsleegers](https://twitter.com/willemsleegers)
-| | <https://github.com/WillemSleegers>

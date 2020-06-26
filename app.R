@@ -4,7 +4,6 @@
 # Load packages
 library(shiny)
 library(statcheck)
-library(DT)
 
 # Set options
 options(shiny.port = 7775)
@@ -54,10 +53,15 @@ ui <- fluidPage(
       checkboxInput("one_tailed", "Try to correct for one-tailed tests?", FALSE)
     ),
     tabPanel("FAQ",
-      includeMarkdown("faq.md")
+      includeMarkdown("faq.md"),
+      includeHTML("contact-michele.html"),
+      includeHTML("contact-willem.html")
     ),
     tabPanel("Cite Us",
-             includeMarkdown("cite.md")
+      includeMarkdown("cite.md"),
+      actionButton("cite_in_text", "Cite in text"),
+      actionButton("cite_reference", "Cite reference"),
+      actionButton("cite_bib", "Copy bib"),
     )
   ),
   
