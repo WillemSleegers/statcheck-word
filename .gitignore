@@ -5,4 +5,4 @@
 .DS_Store
 
 # don't sync knitted html docs, only sync the md files
-*.html
+faq.html
