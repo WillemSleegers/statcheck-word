@@ -6,7 +6,8 @@
 6. [Why does `statcheck` flag a result as an error?](#whyerror)
 7. [How accurate is `statcheck`?](#accuracy)
 8. [Where can I find more information about `statcheck`?](#moreinfo)
-9. [Who do I contact if I have additional questions?](#contact)
+9. [I still have a question about statcheck](#contactM)
+10. [I still have a question about the Word add-in](#contactW)
 
 <a name="whatis"></a>
 
@@ -105,5 +106,8 @@ In typical psychology journals, `statcheck` detects about 60% of the null hypoth
 * [The validity study](https://psyarxiv.com/tcxaj/): we compared `statcheck`'s performance with manual checks and assessed its accuracy in classifying results as consistent/inconsistent
 * [The GitHub page](https://github.com/MicheleNuijten/statcheck): here you can find `statcheck`'s latest developments.
 
-### Who do I contact if I have additional questions?<a name="contact"></a>
-Trouble with `statcheck`? Contact Michèle. Trouble with the Word add-in? Contact Willem.
+### I still have a question about `statcheck`<a name="contactM"></a>
+Trouble with `statcheck`? Contact Michèle. 
+
+### I still have a question about the Word add-in<a name="contactW"></a>
+Trouble with the Word add-in? Contact Willem.
