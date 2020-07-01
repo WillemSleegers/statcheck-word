@@ -38,6 +38,7 @@ ui <- fluidPage(
   
   # Include statcheck image
   img(id = "statcheck-logo", src = "assets/statcheck.png"),
+  div(id = "statcheck-tag", "A spellchecker for statistics"),
   
   tabsetPanel(type = "tabs",
     tabPanel("statcheck",
@@ -59,9 +60,9 @@ ui <- fluidPage(
     ),
     tabPanel("Cite Us",
       includeMarkdown("cite.md"),
-      actionButton("cite_in_text", "Cite in text"),
-      actionButton("cite_reference", "Cite reference"),
-      actionButton("cite_bib", "Copy bib"),
+      actionButton("cite_in_text", "Cite in text", class = "cite_button"),
+      actionButton("cite_reference", "Cite reference", class = "cite_button"),
+      actionButton("cite_bib", "Copy bib", class = "cite_button"),
     )
   ),
   

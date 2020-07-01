@@ -108,6 +108,8 @@ function copy_bib() {
     var successful = document.execCommand('copy');
     var msg = successful ? 'successful' : 'unsuccessful';
     console.log('Copying text command was ' + msg);
+    document.getElementById("cite_bib").innerHTML = "bib copied!";
+    setTimeout(function() {document.getElementById("cite_bib").innerHTML = "Copy bib";}, 3000);
   } catch (err) {
     console.log('Oops, unable to copy');
   }
