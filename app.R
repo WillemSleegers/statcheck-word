@@ -38,11 +38,15 @@ ui <- fluidPage(
   
   # Include statcheck image
   img(id = "statcheck-logo", src = "assets/statcheck.png"),
+  div(id = "statcheck-tag", "A spellchecker for statistics"),
   
   tabsetPanel(type = "tabs",
     tabPanel("statcheck",
       # Output: Display found statistics in a table
       uiOutput(outputId = "results"),
+      
+      # Instructions
+      p(id = "instruction_text", "Click on the button below to check your document for statistical inconsistencies."),
       
       # Input: Check document button
       actionButton("check_button", "Run statcheck"),
@@ -53,15 +57,13 @@ ui <- fluidPage(
       checkboxInput("one_tailed", "Try to correct for one-tailed tests?", FALSE)
     ),
     tabPanel("FAQ",
-      includeMarkdown("faq.md"),
-      includeHTML("contact-michele.html"),
-      includeHTML("contact-willem.html")
+      includeHTML("faq.html"),
     ),
     tabPanel("Cite Us",
       includeMarkdown("cite.md"),
-      actionButton("cite_in_text", "Cite in text"),
-      actionButton("cite_reference", "Cite reference"),
-      actionButton("cite_bib", "Copy bib"),
+      actionButton("cite_in_text", "Cite in text", class = "cite_button"),
+      actionButton("cite_reference", "Cite reference", class = "cite_button"),
+      actionButton("cite_bib", "Copy bib", class = "cite_button"),
     )
   ),
   
