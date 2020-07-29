@@ -46,7 +46,7 @@ ui <- fluidPage(
       uiOutput(outputId = "results"),
       
       # Instructions
-      p(id = "instruction_text", "Click on the button below to check your document for statistical inconsistencies."),
+      p(id = "instruction_text", "Click the button below to let statcheck search for statistical test results, recalculate the p-value, and flag potential inconsistencies."),
       
       # Input: Check document button
       actionButton("check_button", "Run statcheck"),
