@@ -6,6 +6,7 @@ Office.onReady(function(info) {
     document.getElementById("cite_in_text").onclick = cite_in_text;
     document.getElementById("cite_reference").onclick = cite_reference;
     document.getElementById("cite_bib").onclick = copy_bib;
+    set_up_FAQ();
   }
 });
 
@@ -22,7 +23,10 @@ async function run() {
     return context.sync().then(function () {
         // Send Word document content to Shiny
         Shiny.onInputChange("body_text", body.text);
-        document.getElementById("check_button").innerHTML = "Run again"
+        document.getElementById("check_button").innerHTML = "Run again";
+        
+        // Remove the instruction text
+        document.getElementById("instruction_text").style.display = "none";
     });
   });
 }
@@ -139,6 +143,7 @@ async function go_to_test(button) {
 }
 
 function collapse(button) {
+  console.log("collapse");
   button.classList.toggle("clicked");
   var content = button.nextElementSibling;
   if (content.style.display === "block") {
@@ -146,4 +151,23 @@ function collapse(button) {
   } else {
     content.style.display = "block";
   }
+}
+
+function set_up_FAQ() {
+  var coll = document.getElementsByClassName("FAQ-collapsible");
+  var i;
+  
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      console.log("FAQ-collapse");
+      this.classList.toggle("FAQ-active");
+      var content = this.nextElementSibling;
+      console.log(content.style.display);
+      if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+      } 
+    });
+}
 }

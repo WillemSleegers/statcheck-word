@@ -45,6 +45,9 @@ ui <- fluidPage(
       # Output: Display found statistics in a table
       uiOutput(outputId = "results"),
       
+      # Instructions
+      p(id = "instruction_text", "Click on the button below to check your document for statistical inconsistencies."),
+      
       # Input: Check document button
       actionButton("check_button", "Run statcheck"),
       
@@ -54,9 +57,7 @@ ui <- fluidPage(
       checkboxInput("one_tailed", "Try to correct for one-tailed tests?", FALSE)
     ),
     tabPanel("FAQ",
-      includeMarkdown("faq.md"),
-      includeHTML("contact-michele.html"),
-      includeHTML("contact-willem.html")
+      includeHTML("faq.html"),
     ),
     tabPanel("Cite Us",
       includeMarkdown("cite.md"),
