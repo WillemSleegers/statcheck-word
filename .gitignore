@@ -3,6 +3,6 @@
 .RData
 .Ruserdata
 .DS_Store
-
 # don't sync knitted html docs, only sync the md files
 faq.html
+~$st_document.docx
