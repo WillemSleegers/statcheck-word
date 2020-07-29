@@ -107,7 +107,7 @@ In typical psychology journals, `statcheck` detects about 60% of the null hypoth
 * [The GitHub page](https://github.com/MicheleNuijten/statcheck): here you can find `statcheck`'s latest developments.
 
 ### I still have a question about `statcheck`<a name="contactM"></a>
-Trouble with `statcheck`? Contact Michèle. 
+Trouble with `statcheck`? Contact Michèle.
 
 ### I still have a question about the Word add-in<a name="contactW"></a>
 Trouble with the Word add-in? Contact Willem.
