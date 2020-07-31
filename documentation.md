@@ -1,10 +1,27 @@
-### Details
+#### Table of contents
+1. [What is `statcheck`?](#par1)
+2. [How does it work?](#par2)
+3. [Example](#par3)
 
-statcheck uses regular expressions to find statistical results in APA format. When a statistical result deviates from APA format, statcheck will not find it. The APA formats that statcheck uses are: t(df) = value, p = value; F(df1,df2) = value, p = value; r(df) = value, p = value; [chi]2 (df, N = value) = value, p = value (N is optional, delta G is also included); Z = value, p = value. All regular expressions take into account that test statistics and p values may be exactly (=) or inexactly (< or >) reported. Different spacing has also been taken into account.
+### What is `statcheck`? <a name="par1"></a>
+`statcheck` is a "spellchecker" for statistics. It checks whether your *p*-values match their accompanying test statistic and degrees of freedom. 
 
-Note that the conversion from PDF (and sometimes also HTML) to plain text and extraction of statistics can result in errors. Some statistical values can be missed, especially if the notation is unconventional. It is recommended to manually check some of the results.
+### How does it work? <a name="par2"></a>
 
-Also, note that a seemingly inconsistent p value can still be correct when we take into account that the test statistic might have been rounded after calculating the corresponding p value. For instance, a reported t value of 2.35 could correspond to an actual value of 2.345 to 2.354 with a range of p values that can slightly deviate from the recomputed p value. statcheck will not count cases like this as errors.
+`statcheck` works in roughly 3 steps:
 
-The web implementation of statcheck will return an error if a PDF that does not contain any statistical results in APA format is submitted.
+1. It scans the text for null-hypothesis significance test (NHST) results that are reported 1) completely (test statistic, degrees of freedom, and *p*-value), and 2) in APA style. 
+2. Using the reported test statistic and degrees of freedom, `statcheck` recalculates the *p*-value. By default, the recalculated *p*-value is two-sided.
+3. `statcheck` compares the reported *p*-value with the recomputed *p*-value. If these two don't match, `statcheck` will flag the result as an error.
 
+### Example <a name="par3"></a>
+
+Say that you reported the following result: 
+
+"The difference was significant, *t*(28) = 1.2, *p* < .05."
+
+If you click *"Run `statcheck`"*, `statcheck` will recognize this as a statistical test. It will take the degrees of freedom (28) and test statistic (2.2) and recalculate the p-value: *p* = .24. This p-value does not match the reported p-value, so `statcheck` will flag this result as an error.
+
+If you click on a result that `statcheck` flagged as an error, you can see the recalculated *p*-value. Click on "Go to test"" to jump to the location of the test in your document. 
+
+To fix any errors, go to your statistical software to check which of the three numbers (test statistic, degrees of freedom, and/or *p*-value) you need to correct.

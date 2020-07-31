@@ -4,7 +4,6 @@
 # Load packages
 library(shiny)
 library(statcheck)
-library(DT)
 
 # Set options
 options(shiny.port = 7775)
@@ -39,11 +38,15 @@ ui <- fluidPage(
   
   # Include statcheck image
   img(id = "statcheck-logo", src = "assets/statcheck.png"),
+  div(id = "statcheck-tag", "A spellchecker for statistics"),
   
   tabsetPanel(type = "tabs",
-    tabPanel("Home",
+    tabPanel("statcheck",
       # Output: Display found statistics in a table
       uiOutput(outputId = "results"),
+      
+      # Instructions
+      p(id = "instruction_text", "Click the button below to let statcheck search for statistical test results, recalculate the p-value, and flag potential inconsistencies."),
       
       # Input: Check document button
       actionButton("check_button", "Run statcheck"),
@@ -53,11 +56,14 @@ ui <- fluidPage(
       # Input: One-tailed tests?
       checkboxInput("one_tailed", "Try to correct for one-tailed tests?", FALSE)
     ),
-    tabPanel("Documentation",
-      includeMarkdown("documentation.md")
+    tabPanel("FAQ",
+      includeHTML("faq.html"),
     ),
-    tabPanel("Contact",
-      p("Contact")
+    tabPanel("Cite Us",
+      includeMarkdown("cite.md"),
+      actionButton("cite_in_text", "Cite in text", class = "cite_button"),
+      actionButton("cite_reference", "Cite reference", class = "cite_button"),
+      actionButton("cite_bib", "Copy bib", class = "cite_button"),
     )
   ),
   
@@ -86,7 +92,7 @@ server <- function(input, output, session) {
       round(computed_p_values, digits = 3))
 
     # Create UI
-    html <- c('<h5>Found tests:</h5>')
+    html <- c('<h5>Detected tests:</h5>')
     for (i in 1:length(tests)) {
       test <- tests[i]
       error <- errors[i]
