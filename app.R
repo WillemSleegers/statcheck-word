@@ -43,18 +43,26 @@ ui <- fluidPage(
   tabsetPanel(type = "tabs",
     tabPanel("statcheck",
       # Output: Display found statistics in a table
-      uiOutput(outputId = "results"),
+      uiOutput(outputId = "tests"),
       
       # Instructions
-      p(id = "instruction_text", "Click on the button below to check your document for statistical inconsistencies."),
+      div(id = "instructions", 
+        h5("Instructions:"),
+        p("Click the button below to let statcheck search for statistical test 
+            results, recalculate the p-value, and flag potential 
+            inconsistencies.")
+      ),
       
       # Input: Check document button
-      actionButton("check_button", "Run statcheck"),
+      actionButton("run", "Run statcheck"),
       
       # Settings
-      h5("Settings"),
-      # Input: One-tailed tests?
-      checkboxInput("one_tailed", "Try to correct for one-tailed tests?", FALSE)
+      div(id = "settings",
+        h5("Settings"),
+        # Input: One-tailed tests?
+        checkboxInput("one_tailed", "Try to correct for one-tailed tests?", FALSE)
+      ),
+      
     ),
     tabPanel("FAQ",
       includeHTML("faq.html"),
@@ -75,54 +83,61 @@ ui <- fluidPage(
 
 server <- function(input, output, session) {
   
-  output$results <- renderUI({
+  output$tests <- renderUI({
     req(input$body_text)
     
     # Extract statistics
-    statistics <- statcheck(input$body_text, OneTailedTxt = input$one_tailed)
-    # statistics <- statcheck("T(21) = 2.12, p < .04, T(15) = 4.3, p < .04")
+    statistics <- statcheck(input$body_text, OneTailedTxt = isolate(input$one_tailed))
     
-    # Extract the relevant bits we want to display to the user
-    tests <- statistics$Raw
-    computed_p_values <- statistics$Computed
-    errors <- statistics$Error
-    
-    # Format the computed p-values
-    computed_p_values <- ifelse(computed_p_values < .001, "< .001", 
-      round(computed_p_values, digits = 3))
-
-    # Recode the error to yes/no
-    errors <- ifelse(errors == TRUE, "yes", "no")
-    
-    # Create UI
-    html <- c('<h5>Detected tests:</h5>')
-    for (i in 1:length(tests)) {
-      test <- tests[i]
-      error <- errors[i]
-      p_value <- computed_p_values[i]
+    # Check if any tests were found
+    if (length(statistics) > 0) {
+      # Extract the relevant bits we want to display to the user
+      tests <- statistics$Raw
+      computed_p_values <- statistics$Computed
+      errors <- statistics$Error
       
-      html <- c(html, '<button type="button" class="collapsible" onclick="collapse(this)">')
-      if (error == "yes") {
-        html <- c(html, '<i class="icon fa fa-warning"></i>')
-      } else {
-        html <- c(html, '<i class="icon "></i>')
+      # Format the computed p-values
+      computed_p_values <- ifelse(computed_p_values < .001, "< .001", 
+        round(computed_p_values, digits = 3))
+      
+      # Create UI
+      html <- c('<h5>Detected tests:</h5>')
+      for (i in 1:length(tests)) {
+        test <- tests[i]
+        error <- errors[i]
+        p_value <- computed_p_values[i]
+        
+        html <- c(html, '<button type="button" class="collapsible" onclick="collapse(this)">')
+        if (error) {
+          html <- c(html, '<i class="icon fa fa-warning"></i>')
+          html <- c(html, test)
+          html <- c(html, '</button>')
+          html <- c(html, '<div class="test_content">')
+          html <- c(html, '<p>It seems that the reported p-value is inconsistent 
+                        with its test statistic and degrees of freedom.</p>')
+        } else {
+          html <- c(html, '<i class="icon "></i>')
+          html <- c(html, test)
+          html <- c(html, '</button>')
+          html <- c(html, '<div class="test_content">')
+          html <- c(html, '<p>This statistical test is internally consistent.</p>')
+        }
+        
+        html <- c(html, '<p>Statcheck computed <b>p = ')
+        html <- c(html, p_value)
+        html <- c(html, '</b></p>')
+        html <- c(html, paste0('<button class="goto_button" id="goto_button_', i, 
+          '" onclick="go_to_test(this)">Go to test</button>'))
+        html <- c(html, '</div>')
       }
-      html <- c(html, test)
-      html <- c(html, '</button>')
-      html <- c(html, '<div class="test_content">')
-      html <- c(html, '<p>Computed p-value: ')
-      html <- c(html, p_value)
-      html <- c(html, '</p>')
-      html <- c(html, paste0('<button class="goto_button" id="goto_button_', i, 
-        '" onclick="go_to_test(this)">Go to test</button>'))
-      html <- c(html, '</div>')
+      session$sendCustomMessage("receive_tests", tests)
+    } else {
+      html <- c('<h5>Detected tests:</h5>')
+      html <- c(html, '<p>No tests were found.</p>')
     }
-    
-    session$sendCustomMessage("receive_tests", tests)
     
     HTML(html)
   })
-  
 }
 
 # Run app -----------------------------------------------------------------

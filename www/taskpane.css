@@ -1,25 +1,37 @@
+
 html, body {
+  font-family: "Segoe WP", "Segoe UI", "Arial", sans-serif;
+  font-size: 13px;
+  color: #262626;
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
 }
 
-#statcheck-tag {
-  margin-top: -2rem;
-  margin-bottom: 2rem;
-  
-  text-align: center;
-}
-
-h3 {
-  padding-top: 0.5em;
-}
-
 .container-fluid {
   width: 100%;
   padding: 0;
 }
+
+/* Statcheck logo and tag */
+
+#statcheck-logo {
+  display: block;
+  margin: 0 auto;
+  margin-top: 1rem;
+  width: 250px;
+}
+
+#statcheck-tag {
+  margin: 0;
+  margin-bottom: 2rem;
+  
+  text-align: center;
+  font-size: 14px;
+}
+
+/* Tabs */
 
 .nav-tabs {
   margin: 0;
@@ -47,90 +59,30 @@ h3 {
   text-indent: -1em;
   padding-left: 1.5em;
 }
- 
+
+/* Code */
+
 code {
   color: inherit;
   background: none;
   padding: 0;
 }
 
-.cite_button {
-  display: block;
-  
-  margin: 0 auto;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  
-  width: 150px;
-}
- 
-#statcheck-logo {
-  display: block;
-  margin: 0 auto;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-  width: 250px;
+
+/* Detected tests section */ 
+
+#instructions h5 {
+  font-weight: bold;
 }
 
-#check_button {
+#run {
   display: block;
   margin: 0 auto;
   margin-top: 2rem;
 }
 
-#results h5 {
-  margin-top: 15px;
-}
-
-.icon {
-  display: inline-block;
-  width: 18px;
-}
-
-.collapsible {
-  cursor: pointer;
-  margin-top: 3px;
-  padding: 5px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  background-color: #F5F5F5;
-  border-bottom: 1px solid transparent;
-}
-
-.collapsible {
-  padding: .75rem 1.25rem;
-  margin-bottom: -4px;
-  background-color: #fff;
-  border: 1px solid rgba(0,0,0,.125);
-}
-
-.collapsible:after {
-  content: '\002B';
-  color: #da8d56;
-  font-weight: 300;
-  float: right;
-  margin-left: 5px;
-}
-
-.clicked:after {
-  content: "\2212";
-}
-
-.fa-warning {
-  color: #da8d56;
-}
-
-#detected_tests:first-child {
-  border-top-left-radius: .25rem;
-  border-top-right-radius: .25rem;
-}
-
-/* Edit to change clicked/hover color of detected tests */
-.clicked, .collapsible:hover {
-  background-color: rgba(218, 141, 86, 0.5);
-  background-color: rgba(1, 1, 1, 0.1);
+#tests h5 {
+  font-weight: bold;
 }
 
 .test_content {
@@ -144,19 +96,63 @@ code {
   margin: 10px;
 }
 
+.collapsible {
+  width: 100%;
+  
+  margin-top: 2px;
+  margin-bottom: 0;
+  padding: .75rem 1.25rem;
+
+  border: none;
+  outline: none;
+  
+  text-align: left;
+  background-color: white;
+  
+  outline: 1px solid #ddd;
+  
+  cursor: pointer;
+}
+
+.collapsible:hover {
+  background-color: rgba(218, 141, 86, 0.5);
+  background-color: rgba(1, 1, 1, 0.1);
+}
+
+.collapsible:after {
+  content: '\002B';
+  color: #aaa;
+  font-weight: normal;
+  float: right;
+  margin-left: 5px;
+}
+
+.expanded:after {
+  content: "\2212";
+}
+
+.fa-warning {
+  color: #da8d56;
+}
+
+.icon {
+  display: inline-block;
+  width: 18px;
+}
+
 .goto_button {
   margin: 0 0 5px 10px;
   background: none!important;
   border: none;
   padding: 0!important;
-  /*optional*/
-  font-family: arial, sans-serif;
-  /*input has OS specific font-family*/
   color: #069;
   text-decoration: underline;
   cursor: pointer;
 }
 
+#settings h5 {
+  font-weight: bold;
+}
 
 /* FAQ */
 
@@ -165,7 +161,7 @@ code {
 
   padding: 10px;
   
-  font-size: 14px;
+  font-size: 13px;
   text-align: left;
   
   color: #337ab7;
@@ -177,10 +173,15 @@ code {
 }
 
 .FAQ-collapsible:after {
+  position: relative;
+  right: 0;
+  top: 0;
+  
   content: "\002B";
-  color: #da8d56;
-  font-weight: bold;
+  color: #aaa;
   float: right;
+  height: 100%;
+  display: block;
 }
 
 .FAQ-collapsible:hover {
@@ -189,7 +190,6 @@ code {
 
 .FAQ-active:after {
   content: "\2212";
-  color: #da8d56;
 }
 
 .FAQ-content {
@@ -207,4 +207,15 @@ code {
 
 .FAQ-content ol, ul {
   margin: 10px;
+}
+
+
+.cite_button {
+  display: block;
+  
+  margin: 0 auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  
+  width: 150px;
 }
