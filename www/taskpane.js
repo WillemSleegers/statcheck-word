@@ -2,7 +2,7 @@ var tests = [];
 
 Office.onReady(function(info) {
   if (info.host === Office.HostType.Word) {
-    document.getElementById("check_button").onclick = run;
+    document.getElementById("run").onclick = run;
     document.getElementById("cite_in_text").onclick = cite_in_text;
     document.getElementById("cite_reference").onclick = cite_reference;
     document.getElementById("cite_bib").onclick = copy_bib;
@@ -23,16 +23,17 @@ async function run() {
     return context.sync().then(function () {
         // Send Word document content to Shiny
         Shiny.onInputChange("body_text", body.text);
-        document.getElementById("check_button").innerHTML = "Run again";
+        document.getElementById("run").innerHTML = "Run again";
         
         // Remove the instruction text
-        document.getElementById("instruction_text").style.display = "none";
+        document.getElementById("instructions").style.display = "none";
     });
   });
 }
 
 Shiny.addCustomMessageHandler('receive_tests', function(x) {
-  tests.push(x);
+  console.log(x);
+  tests = x;
 });
 
 function cite_in_text() {
@@ -123,19 +124,24 @@ function copy_bib() {
 
 async function go_to_test(button) {
   return Word.run(async context => {
+    console.log("Go to test");
+    
     // Determine which button was clicked and thus which test the user wants to 
     // find
     var test_nr = button.id.match(/[0-9]+/)[0];
-  
+    var test = tests[test_nr - 1];
+
     // Search the document's body for the test
-    let results = context.document.body.search(tests[test_nr - 1]);
+    var results = context.document.body.search(test);
     
     // Load the search results items
     results.load("items");
-    await context.sync();
+    
+    
+    await context.sync(); 
     
     // Grab the first search result (there should be only 1, but this may not
-    // always be true
+    // always be true)
     // TODO: Add support for when there are multiple search results
     var range = results.getFirst();
     range.select();
@@ -144,7 +150,24 @@ async function go_to_test(button) {
 
 function collapse(button) {
   console.log("collapse");
-  button.classList.toggle("clicked");
+  
+  //if (button.classList.contains("expanded")) {
+  //  button.classList.remove("expanded"); 
+  //  var content = button.nextElementSibling;
+  //  content.style.display = "none";
+  //} else {
+  //  var buttons = document.getElementsByClassName("collapsible");
+  //  for (var i = 0; i < buttons.length; i++) {
+  //    var content = buttons[i].nextElementSibling;
+  //    content.style.display = "none";
+  //  }
+  //  
+  //  button.classList.toggle("expanded");
+  //  var content = button.nextElementSibling;
+  //  content.style.display = "block";
+  //}
+  
+  button.classList.toggle("expanded");
   var content = button.nextElementSibling;
   if (content.style.display === "block") {
     content.style.display = "none";
