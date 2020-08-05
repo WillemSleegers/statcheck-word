@@ -7,6 +7,13 @@ Office.onReady(function(info) {
     document.getElementById("cite_reference").onclick = cite_reference;
     document.getElementById("cite_bib").onclick = copy_bib;
     set_up_FAQ();
+    
+    // Toggle plus minus icon on show hide of collapse element
+    $(".collapse").on('show.bs.collapse', function(){
+    $(this).prev(".card-header").find(".fa").removeClass("fa-plus").addClass("fa-minus");
+    }).on('hide.bs.collapse', function(){
+    $(this).prev(".card-header").find(".fa").removeClass("fa-minus").addClass("fa-plus");
+    });
   }
 });
 
