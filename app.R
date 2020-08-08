@@ -108,37 +108,42 @@ server <- function(input, output, session) {
       
       # Create UI
       html <- c('<h5>Detected tests</h5>')
+      html <- c(html, '<div class="panel-group">')
       for (i in 1:length(tests)) {
         test <- tests[i]
         error <- errors[i]
         p_value <- computed_p_values[i]
         
-        html <- c(html, '<button type="button" class="collapsible" onclick="collapse(this)">')
+        html <- c(html, '<div class="panel panel-default">
+          <div class="panel-heading">
+          <h4 class="panel-title">')
+        
+        html <- c(html, paste0('<a class="test collapsible-link" data-toggle="collapse" 
+           href="#collapse', i, '">'))
+        html <- c(html, test)
         if (error) {
           html <- c(html, '<i class="icon fa fa-warning"></i>')
-          html <- c(html, test)
-          html <- c(html, '</button>')
-          html <- c(html, '<div class="test_content">')
+        }
+        html <- c(html, '</a></h4></div>')
+        html <- c(html, paste0('<div id="collapse', i, '" class="panel-collapse collapse">'))
+        html <- c(html, '<div class="panel-body">')
+        if (error) {
           html <- c(html, '<p>It seems that the reported p-value is inconsistent 
                         with its test statistic and degrees of freedom.</p>')
         } else {
-          html <- c(html, '<i class="icon "></i>')
-          html <- c(html, test)
-          html <- c(html, '</button>')
-          html <- c(html, '<div class="test_content">')
           html <- c(html, '<p>This statistical test is internally consistent.</p>')
         }
-        
         html <- c(html, '<p>Statcheck computed <b>p = ')
         html <- c(html, p_value)
         html <- c(html, '</b></p>')
-        html <- c(html, paste0('<button class="goto_button" id="goto_button_', i, 
-          '" onclick="go_to_test(this)">Go to test</button>'))
-        html <- c(html, '</div>')
+        html <- c(html, paste0('<a class="goto_button" id="goto_button_', i, 
+          '" onclick="go_to_test(this)">Go to test</a>'))
+        html <- c(html, '</div></div></div>')
       }
+      html <- c(html, '</div>')
       session$sendCustomMessage("receive_tests", tests)
     } else {
-      html <- c('<h5>Detected tests:</h5>')
+      html <- c('<h5>Detected tests</h5>')
       html <- c(html, '<p>No tests were found.</p>')
     }
     

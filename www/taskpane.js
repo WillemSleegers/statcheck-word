@@ -148,15 +148,3 @@ async function go_to_test(button) {
     range.select();
   });
 }
-
-function collapse(button) {
-  console.log("collapse");
-  
-  button.classList.toggle("expanded");
-  var content = button.nextElementSibling;
-  if (content.style.display === "block") {
-    content.style.display = "none";
-  } else {
-    content.style.display = "block";
-  }
-}
