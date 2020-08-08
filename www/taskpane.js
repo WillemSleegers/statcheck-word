@@ -6,14 +6,11 @@ Office.onReady(function(info) {
     document.getElementById("cite_in_text").onclick = cite_in_text;
     document.getElementById("cite_reference").onclick = cite_reference;
     document.getElementById("cite_bib").onclick = copy_bib;
-    set_up_FAQ();
     
-    // Toggle plus minus icon on show hide of collapse element
-    $(".collapse").on('show.bs.collapse', function(){
-    $(this).prev(".card-header").find(".fa").removeClass("fa-plus").addClass("fa-minus");
-    }).on('hide.bs.collapse', function(){
-    $(this).prev(".card-header").find(".fa").removeClass("fa-minus").addClass("fa-plus");
-    });
+    // Initialize all tooltips
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    })
   }
 });
 
@@ -31,9 +28,6 @@ async function run() {
         // Send Word document content to Shiny
         Shiny.onInputChange("body_text", body.text);
         document.getElementById("run").innerHTML = "Run again";
-        
-        // Remove the instruction text
-        document.getElementById("instructions").style.display = "none";
     });
   });
 }
@@ -165,23 +159,4 @@ function collapse(button) {
   } else {
     content.style.display = "block";
   }
-}
-
-function set_up_FAQ() {
-  var coll = document.getElementsByClassName("FAQ-collapsible");
-  var i;
-  
-  for (i = 0; i < coll.length; i++) {
-    coll[i].addEventListener("click", function() {
-      console.log("FAQ-collapse");
-      this.classList.toggle("FAQ-active");
-      var content = this.nextElementSibling;
-      console.log(content.style.display);
-      if (content.style.maxHeight) {
-        content.style.maxHeight = null;
-      } else {
-        content.style.maxHeight = content.scrollHeight + "px";
-      } 
-    });
-}
 }

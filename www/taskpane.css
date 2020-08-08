@@ -71,15 +71,35 @@ code {
 
 /* Detected tests section */ 
 
-#instructions h5 {
-  font-weight: bold;
+#run_statcheck {
+  display: block;
+  margin: 0 auto;
+  margin-top: 5px;
+  width: 115px;
+  
+  position: relative;
+  
+  vertical-align: top;
 }
 
 #run {
-  display: block;
-  margin: 0 auto;
-  margin-top: 2rem;
+  display: inline-block;
+  width: 115px;
 }
+
+#run_statcheck a {
+  font-size: 14px;
+  position: absolute;
+  top: -14px;
+  right: -14px;
+}
+
+.tooltip-inner {
+    max-width: 350px;
+    /* If max-width does not work, try using width instead */
+    width: 155%; 
+}
+
 
 #tests h5 {
   font-weight: bold;

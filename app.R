@@ -42,19 +42,25 @@ ui <- fluidPage(
   
   tabsetPanel(type = "tabs",
     tabPanel("statcheck",
-      # Output: Display found statistics in a table
-      uiOutput(outputId = "tests"),
       
-      # Instructions
-      div(id = "instructions", 
-        h5("Instructions:"),
-        p("Click the button below to let statcheck search for statistical test 
-            results, recalculate the p-value, and flag potential 
-            inconsistencies.")
+      # Input: Run statcheck
+      div(id = "run_statcheck", 
+        # h5("Instructions"),
+        #p(id = "instructions_text", "Click the button below to let statcheck 
+        #  search for statistical test results, recalculate the p-value, and flag 
+        #  potential inconsistencies.")
+        
+        # Input: Check document button
+        actionButton("run", "Run statcheck"),
+        HTML('<a data-toggle="tooltip" data-placement="top" 
+              title="Click the button to scan your document for statistical inconsistencies.">
+              <i class="fa fa-question-circle"></i>
+              </a>'
+        ),
       ),
       
-      # Input: Check document button
-      actionButton("run", "Run statcheck"),
+      # Output: Display found statistics in a table
+      uiOutput(outputId = "tests"),
       
       # Settings
       div(id = "settings",
@@ -101,7 +107,7 @@ server <- function(input, output, session) {
         round(computed_p_values, digits = 3))
       
       # Create UI
-      html <- c('<h5>Detected tests:</h5>')
+      html <- c('<h5>Detected tests</h5>')
       for (i in 1:length(tests)) {
         test <- tests[i]
         error <- errors[i]
