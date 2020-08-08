@@ -7,6 +7,13 @@ Office.onReady(function(info) {
     document.getElementById("cite_reference").onclick = cite_reference;
     document.getElementById("cite_bib").onclick = copy_bib;
     set_up_FAQ();
+    
+    // Toggle plus minus icon on show hide of collapse element
+    $(".collapse").on('show.bs.collapse', function(){
+    $(this).prev(".card-header").find(".fa").removeClass("fa-plus").addClass("fa-minus");
+    }).on('hide.bs.collapse', function(){
+    $(this).prev(".card-header").find(".fa").removeClass("fa-minus").addClass("fa-plus");
+    });
   }
 });
 
@@ -150,22 +157,6 @@ async function go_to_test(button) {
 
 function collapse(button) {
   console.log("collapse");
-  
-  //if (button.classList.contains("expanded")) {
-  //  button.classList.remove("expanded"); 
-  //  var content = button.nextElementSibling;
-  //  content.style.display = "none";
-  //} else {
-  //  var buttons = document.getElementsByClassName("collapsible");
-  //  for (var i = 0; i < buttons.length; i++) {
-  //    var content = buttons[i].nextElementSibling;
-  //    content.style.display = "none";
-  //  }
-  //  
-  //  button.classList.toggle("expanded");
-  //  var content = button.nextElementSibling;
-  //  content.style.display = "block";
-  //}
   
   button.classList.toggle("expanded");
   var content = button.nextElementSibling;
