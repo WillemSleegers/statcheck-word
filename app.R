@@ -122,7 +122,9 @@ server <- function(input, output, session) {
            href="#collapse', i, '">'))
         html <- c(html, test)
         if (error) {
-          html <- c(html, '<i class="icon fa fa-warning"></i>')
+          html <- c(html, '<a data-toggle="tooltip" data-placement="top" 
+              title="Inconsistent results detected; click to see more.">
+              <i class="icon fa fa-warning"></i></a>')
         }
         html <- c(html, '</a></h4></div>')
         html <- c(html, paste0('<div id="collapse', i, '" class="panel-collapse collapse">'))
