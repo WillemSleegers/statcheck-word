@@ -74,10 +74,7 @@ ui <- fluidPage(
       includeHTML("faq.html"),
     ),
     tabPanel("Cite Us",
-      includeMarkdown("cite.md"),
-      actionButton("cite_in_text", "Cite in text", class = "cite_button"),
-      actionButton("cite_reference", "Cite reference", class = "cite_button"),
-      actionButton("cite_bib", "Copy bib", class = "cite_button"),
+      includeHTML("cv.html")
     )
   ),
   

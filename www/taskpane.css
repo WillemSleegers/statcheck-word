@@ -196,6 +196,10 @@ code {
 }
 
 
+#cv blockquote {
+  font-size: 13px;
+}
+
 .cite_button {
   display: block;
   
@@ -205,3 +209,4 @@ code {
   
   width: 150px;
 }
+
