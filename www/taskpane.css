@@ -152,7 +152,7 @@ code {
 }
 
 .panel-title {
-  color: #555;
+  color: #262626;
   font-size: 13px;
   width: 100%;
 }
@@ -163,7 +163,7 @@ code {
 
 .panel-body p {
   margin: 10px 0 10 10px;
-  color: #555;
+  color: #262626
 }
 
 .panel-body ol {
