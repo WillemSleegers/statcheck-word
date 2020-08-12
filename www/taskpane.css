@@ -70,7 +70,7 @@ code {
 }
 
 #run_statcheck a {
-  font-size: 14px;
+  font-size: 13px;
   position: absolute;
   top: -14px;
   right: -14px;
@@ -91,19 +91,12 @@ code {
   font-size: 13px;
 }
 
-.test_content {
-  display: none;
-  overflow: hidden;
-  border: 1px solid transparent;
-  border-color: #F5F5F5;
-}
 
-.test_content p {
-  margin: 10px;
-}
 
 .fa-warning {
   color: #da8d56;
+  color: #337ab7;
+  color: black;
   float: right;
   margin-top: 2px;
 }
