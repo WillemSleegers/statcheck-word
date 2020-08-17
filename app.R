@@ -47,7 +47,7 @@ ui <- fluidPage(
       div(id = "settings",
         h5(id = "settings-title", "Settings"), 
         # Input: One-tailed tests?
-        checkboxInput("one_tailed", "Correct for one-tailed tests", FALSE)  
+        checkboxInput("one_tailed", "Correct for one-tailed tests", FALSE)
       ),
       
       # Input: Run statcheck

@@ -125,18 +125,13 @@ code {
   font-weight: bold;
 }
 
-#customSwitchLabel {
-  font-weight: normal;
+#one_tailed + span {
+  line-height: 21px;
 }
 
-.fa-cog {
-  font-size: 20px;
-}
-
-#settings-button {
-  margin: 0;
-  padding: 0;
-  
+#one_tailed + label:after {
+  background: red !important;
+  color: #333;
 }
 
 /* FAQ */
