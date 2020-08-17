@@ -15,6 +15,7 @@ Office.onReady(function(info) {
 });
 
 async function run() {
+  
   return Word.run(async context => {
      // Create a proxy object for the document body.
     var body = context.document.body;
@@ -149,4 +150,11 @@ async function go_to_test(button) {
     var range = results.getFirst();
     range.select();
   });
+}
+
+function showSettings() {
+  console.log("Showing settings");
+  var settings = document.getElementById("settings-controls");
+  
+  settings.classList.toggle("settings-active");
 }
