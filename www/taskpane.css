@@ -115,8 +115,28 @@ code {
   cursor: pointer;
 }
 
-#settings h5 {
+/* Settings */
+
+#settings {
+  margin-bottom: 20px;
+}
+
+#settings-title {
   font-weight: bold;
+}
+
+#customSwitchLabel {
+  font-weight: normal;
+}
+
+.fa-cog {
+  font-size: 20px;
+}
+
+#settings-button {
+  margin: 0;
+  padding: 0;
+  
 }
 
 /* FAQ */

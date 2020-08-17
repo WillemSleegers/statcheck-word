@@ -45,9 +45,9 @@ ui <- fluidPage(
       
        # Settings
       div(id = "settings",
-        h5("Settings"),
+        h5(id = "settings-title", "Settings"), 
         # Input: One-tailed tests?
-        checkboxInput("one_tailed", "Try to correct for one-tailed tests?", FALSE)
+        checkboxInput("one_tailed", "Correct for one-tailed tests", FALSE)  
       ),
       
       # Input: Run statcheck
@@ -69,9 +69,6 @@ ui <- fluidPage(
       
       # Output: Display found statistics in a table
       uiOutput(outputId = "tests"),
-      
-     
-      
     ),
     tabPanel("FAQ",
       includeHTML("faq.html"),
@@ -89,11 +86,18 @@ ui <- fluidPage(
 
 server <- function(input, output, session) {
   
+  one_tailed <- eventReactive(input$run, {
+    input$one_tailed
+  })
+  
   output$tests <- renderUI({
+    
+    print("Running")
+    
     req(input$body_text)
     
     # Extract statistics
-    statistics <- statcheck(input$body_text, OneTailedTxt = isolate(input$one_tailed))
+    statistics <- statcheck(input$body_text, OneTailedTxt = one_tailed())
     
     # Check if any tests were found
     if (length(statistics) > 0) {
@@ -136,8 +140,8 @@ server <- function(input, output, session) {
         html <- c(html, '<p>Statcheck computed <b>p = ')
         html <- c(html, p_value)
         html <- c(html, '</b></p>')
-        html <- c(html, paste0('<a class="goto_button" id="goto_button_', i, 
-          '" onclick="go_to_test(this)">Go to test</a>'))
+        html <- c(html, paste0('<p><a class="goto_button" id="goto_button_', i, 
+          '" onclick="go_to_test(this)">Go to test</a></p>'))
         html <- c(html, '</div></div></div>')
       }
       html <- c(html, '</div>')
