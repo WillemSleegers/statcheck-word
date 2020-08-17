@@ -1,5 +1,19 @@
-# statcheck-word
-A Microsoft Word add-in for statchecking your manuscript.
+# The statcheck Word add-in
+The statcheck Word add-in is a "spellchecker" for statistics. It allows you to 
+check your manuscript for statistical reporting inconsistencies as you write!
+
+Statcheck searches the text in your Word document for null hypothesis 
+significance tests, for example, *t(28) = 2.2, p = .063*. Statcheck will give
+an overview of all the tests it found in the text.
+
+Next, it recalculates the p-value based on the test statistic and degrees of 
+freedom. In the example above, the p-value belonging to a t-value of 2.2 with 28
+degrees of freedom is .036, not .063!
+
+If statcheck detects such an inconsistency, it will flag the result with a 
+little orange warning sign. To solve the inconsistency, go back to your
+statistical software to check which of the numbers in the result needs to be
+corrected.
 
 # Requirements
 
