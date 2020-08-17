@@ -69,6 +69,11 @@ code {
   width: 115px;
 }
 
+#run_statcheck {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 #run_statcheck a {
   font-size: 13px;
   position: absolute;
@@ -95,10 +100,9 @@ code {
 
 .fa-warning {
   color: #da8d56;
-  color: #337ab7;
-  color: black;
-  float: right;
   margin-top: 2px;
+  
+  float: right;
 }
 
 .icon {
@@ -122,7 +126,6 @@ code {
 }
 
 .panel-group .panel {
-  margin-bottom: -6px;
   border-radius: 0;
 }
 

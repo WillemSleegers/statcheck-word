@@ -43,6 +43,13 @@ ui <- fluidPage(
   tabsetPanel(type = "tabs",
     tabPanel("statcheck",
       
+       # Settings
+      div(id = "settings",
+        h5("Settings"),
+        # Input: One-tailed tests?
+        checkboxInput("one_tailed", "Try to correct for one-tailed tests?", FALSE)
+      ),
+      
       # Input: Run statcheck
       div(id = "run_statcheck", 
         # h5("Instructions"),
@@ -55,19 +62,15 @@ ui <- fluidPage(
         HTML('<a data-toggle="tooltip" data-placement="top" 
               title="Click the button to scan your document for statistical inconsistencies.">
               <i class="fa fa-question-circle"></i>
-              </a>'
-        ),
+              </a>')
       ),
+      
+      hr(),
       
       # Output: Display found statistics in a table
       uiOutput(outputId = "tests"),
       
-      # Settings
-      div(id = "settings",
-        h5("Settings"),
-        # Input: One-tailed tests?
-        checkboxInput("one_tailed", "Try to correct for one-tailed tests?", FALSE)
-      ),
+     
       
     ),
     tabPanel("FAQ",
@@ -117,12 +120,10 @@ server <- function(input, output, session) {
         
         html <- c(html, paste0('<a class="test collapsible-link" data-toggle="collapse" 
            href="#collapse', i, '">'))
-        html <- c(html, test)
         if (error) {
-          html <- c(html, '<a data-toggle="tooltip" data-placement="top" 
-              title="Inconsistent results detected; click to see more.">
-              <i class="icon fa fa-warning"></i></a>')
+          html <- c(html, '<i class="icon fa fa-warning"></i>')
         }
+        html <- c(html, test)
         html <- c(html, '</a></h4></div>')
         html <- c(html, paste0('<div id="collapse', i, '" class="panel-collapse collapse">'))
         html <- c(html, '<div class="panel-body">')
