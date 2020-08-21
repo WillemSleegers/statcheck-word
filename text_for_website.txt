@@ -1,0 +1,10 @@
+# Text for homepage
+
+## Privacy statement
+The statcheck add-in does not collect or transmit any user information or files.
+
+## End User License Agreement
+Link to https://support.office.com/client/61994a3b-2c87-41c4-a88d-a6455efa362d?omkt=en-US
+
+## FAQ
+Link to https://support.microsoft.com/en-us/office/office-store-faq-a0d4f29c-13e2-4c56-a398-fe6fd3a6106d?ocmsassetid=ha102900784&omkt=en-us&ui=en-us&rs=en-us&ad=us
