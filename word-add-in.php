@@ -24,9 +24,11 @@
 	<?php $pageid="word-add-in"; include 'navbar.php'; ?>
     <div class="container">
       <div class="page-header" style="margin-top: 80px; border-bottom:0px;">
-        <h1>MS Word Add-In</h1>
+        <h1>statcheck // MS Word add-in</h1>
       
-		<p>We made a add-in for MS Word. It's cool.</p>
+		<p>Coming soon: a statcheck add-in for MS Word!</p>
+		<p>Check your manuscript for statistical typos while you're writing.</p>
+		<p>[[[add example video here]]]</p>
 		
 	  </div>
 	<?php include 'footer.php'; ?>
