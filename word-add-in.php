@@ -26,9 +26,10 @@
       <div class="page-header" style="margin-top: 80px; border-bottom:0px;">
         <h1>statcheck // MS Word add-in</h1>
       
-		<p>Coming soon: a statcheck add-in for MS Word!</p>
+		<h3>Coming soon: a statcheck add-in for MS Word!</h3>
 		<p>Check your manuscript for statistical typos while you're writing.</p>
-		<p>[[[add example video here]]]</p>
+	        <p><image src="screenshot.png" width="750px"/></p>
+
 		
 	  </div>
 	<?php include 'footer.php'; ?>
