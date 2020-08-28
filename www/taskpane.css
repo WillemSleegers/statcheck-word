@@ -164,18 +164,11 @@ code {
 }
 
 .panel-body ol {
-  list-style-position: inside;
-  padding-left: 0;
+  padding-left: 20px;
 }
 
 .panel-body ul {
-  list-style-position: inside;
-  padding-left: 0;
-}
-
-.panel-body li {
-  text-indent: -15px;
-  padding-left: 15px;
+  padding-left: 10px;
 }
 
 .collapsible-link {
