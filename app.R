@@ -71,10 +71,10 @@ ui <- fluidPage(
       uiOutput(outputId = "tests"),
     ),
     tabPanel("FAQ",
-      includeHTML("faq.html"),
+      includeHTML("www/faq.html"),
     ),
     tabPanel("Cite Us",
-      includeHTML("cv.html")
+      includeHTML("www/cite.html")
     )
   ),
   
