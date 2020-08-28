@@ -12,7 +12,7 @@
     <div id="FAQ-collapse1" class="panel-collapse collapse">
       <div class="panel-body">
         <p>
-          <b>statcheck</b> is a "spellchecker" for statistics. It checks whether your 
+          <span class="statcheck-FAQ">statcheck</span> is a "spellchecker" for statistics. It checks whether your 
           <i>p</i>-values match their accompanying test statistic and degrees 
           of freedom.
         </p>
@@ -30,10 +30,10 @@
     <div id="FAQ-collapse2" class="panel-collapse collapse">
       <div class="panel-body">
         <p>
-  		    <b>statcheck</b> searches for null-hypothesis significance test (NHST) in APA
+  		    <span class="statcheck-FAQ">statcheck</span> searches for null-hypothesis significance test (NHST) in APA
   		    style (e.g., t(28) = 2.2, p < .05). It recalculates the <i>p</i>-value
   		    using the reported test statistic and degrees of freedom. If the
-  		    reported and computed <i>p</i>-values don't match, <b>statcheck</b> will flag 
+  		    reported and computed <i>p</i>-values don't match, <span class="statcheck-FAQ">statcheck</span> will flag 
   		    the result as an error.
   		    </p>
       </div>
@@ -50,7 +50,7 @@
     <div id="FAQ-collapse3" class="panel-collapse collapse">
       <div class="panel-body">
         <p>
-          If you click on a result that <b>statcheck</b> flagged as an error, you can see 
+          If you click on a result that <span class="statcheck-FAQ">statcheck</span> flagged as an error, you can see 
     		  the recalculated <i>p</i>-value. Click on "Go to test" to jump to the location of 
     		  the test in your document.
     		</p>
@@ -74,13 +74,13 @@
     <div id="FAQ-collapse4" class="panel-collapse collapse">
       <div class="panel-body">
         <p>
-          <b>statcheck</b> recognizes correlations and t, F, &chi;&sup2;, Z tests and 
+          <span class="statcheck-FAQ">statcheck</span> recognizes correlations and t, F, &chi;&sup2;, Z tests and 
           Q tests, as long as they are reported completely (test statistic,
           degrees of freedom if applicable, and <i>p</i>-value) and in APA 
           style.
           </p>
     	  <p>
-    	    <b>statcheck</b> takes into account that test statistics and p values may be 
+    	    <span class="statcheck-FAQ">statcheck</span> takes into account that test statistics and p values may be 
     		  exactly (=) or inexactly (< or >) reported. Different spacing has 
     		  also been taken into account.
     		</p>
@@ -99,16 +99,16 @@
     <div id="FAQ-collapse5" class="panel-collapse collapse">
       <div class="panel-body">
         <p>
-          By default, <b>statcheck</b> treats all tests as two-tailed. If you want to 
+          By default, <span class="statcheck-FAQ">statcheck</span> treats all tests as two-tailed. If you want to 
           take into account one-tailed tests, you can check the box "Correct for 
           one-tailed tests".
   	  	</p>
       	<p>
-      	  When this box is ticked, <b>statcheck</b> will search the entire text for 
+      	  When this box is ticked, <span class="statcheck-FAQ">statcheck</span> will search the entire text for 
       	  the keywords "one-tailed", "one-sided", and "directional" (taking 
-      	  spacing issues etc. into account). When <b>statcheck</b> finds at least one 
+      	  spacing issues etc. into account). When <span class="statcheck-FAQ">statcheck</span> finds at least one 
       	  of those keywords AND an initially inconsistent result would be 
-      	  consistent if it was a one-tailed test, then <b>statcheck</b> treats this 
+      	  consistent if it was a one-tailed test, then <span class="statcheck-FAQ">statcheck</span> treats this 
       	  case as a one-tailed test and counts it as consistent.
       	</p>
       </div>
@@ -126,7 +126,7 @@
     <div id="FAQ-collapse6" class="panel-collapse collapse">
       <div class="panel-body">
         <p>
-          Some common reasons why <b>statcheck</b> doesn't detect some results:
+          Some common reasons why <span class="statcheck-FAQ">statcheck</span> doesn't detect some results:
         </p>
         <ol>
         	<li>
@@ -135,10 +135,10 @@
         		a semi-colon instead of a comma.
         	</li>
         	<li>
-        		The result was not reported completely. <b>statcheck</b> needs three 
+        		The result was not reported completely. <span class="statcheck-FAQ">statcheck</span> needs three 
         		ingredients to detect a result and recalculate the <i>p</i>-value: 
         		the reported test statistic, degrees of freedom, and <i>p</i>-value. 
-        		If one or more of these are missing, <b>statcheck</b> will not pick it up.
+        		If one or more of these are missing, <span class="statcheck-FAQ">statcheck</span> will not pick it up.
         	</li>
         	<li>
         		The result is reported in a table.
@@ -159,36 +159,21 @@
     <div id="FAQ-collapse7" class="panel-collapse collapse">
       <div class="panel-body">
         <p>
-          <b>statcheck</b> flags result as an error when the 
+          <span class="statcheck-FAQ">statcheck</span> flags result as an error when the 
           reported <i>p</i>-value does not match the recalculated 
           <i>p</i>-value. However, there may be cases in which you deliberately 
           reported an inconsistent result. For example, when you conducted a 
           one-tailed test, reported a Bonferroni corrected <i>p</i>-value, or 
           corrected degrees of freedom.
         </p>
-        <ol>
-          <li>
-            You conducted a one-tailed test, but you did not explicitly state 
-            it was a one-tailed test using one of the keywords mentioned above.
-          </li>
-          <li>
-            You used a Bonferroni correction on your <i>p</i>-value (i.e., 
-            multiplied your <i>p</i>-value by the number of tests) to correct 
-            for multiple testing.
-          </li>
-          <li>
-            You corrected the degrees of freedom for a violation of an 
-            assumption (e.g., sphericity), but reported the unadjusted test 
-            statistic and <i>p</i>-value.
-          </li>
-        </ol>
         <p>
-          Of course it is also possible that <b>statcheck</b> really made a mistake 
-          and erroneously flagged a result as inconsistent. If you think that 
+          Of course it is also possible that 
+          <span class="statcheck-FAQ">statcheck</span> really made a mistake and 
+          erroneously flagged a result as inconsistent. If you think that 
           statcheck wrongly flagged one of your results, please contact us 
           (see below).
           
-          For more information about <b>statcheck</b>'s accuracy, see the next section.
+          For more information about <span class="statcheck-FAQ">statcheck</span>'s accuracy, see the next section.
         </p>
       </div>
     </div>
@@ -205,9 +190,9 @@
     <div id="FAQ-collapse8" class="panel-collapse collapse">
       <div class="panel-body">
         <p>
-          In typical psychology journals, <b>statcheck</b> detects about 60% of the 
+          In typical psychology journals, <span class="statcheck-FAQ">statcheck</span> detects about 60% of the 
           null hypothesis significance tests. In classifying extracted results 
-          as consistent or inconsistent, <b>statcheck</b> has an accuracy between 
+          as consistent or inconsistent, <span class="statcheck-FAQ">statcheck</span> has an accuracy between 
           96.2% and 99.9%, depending on its settings. See 
           <a href="https://psyarxiv.com/tcxaj/"> Nuijten et al., 2017</a>: for 
           details.
@@ -229,9 +214,9 @@
         <ul>
         	<li>
         	  <a href="https://rpubs.com/michelenuijten/statcheckmanual">The 
-        	  manual</a><br> A detailed instruction manual with information on what 
-        	  <b>statcheck</b> can and cannot do, information on how to install and use 
-        	  the <b>statcheck</b> R package, and more.
+        	  manual</a>: A detailed instruction manual with information on what 
+        	  <span class="statcheck-FAQ">statcheck</span> can and cannot do, information on how to install and use 
+        	  the <span class="statcheck-FAQ">statcheck</span> R package, and more.
         	</li>
         	<li>
         	  <a href="http://statcheck.io">The web app</a>: Upload a paper in 
@@ -246,18 +231,18 @@
         	</li>
         	<li>
         	  <a href="https://doi.org/10.3758/s13428-015-0664-2">
-        	  The paper</a><br> The seminal paper in which <b>statcheck</b> was introduced. 
-        	  We ran <b>statcheck</b> on over 30,000 psychology papers and report 
+        	  The paper</a>: The seminal paper in which <span class="statcheck-FAQ">statcheck</span> was introduced. 
+        	  We ran <span class="statcheck-FAQ">statcheck</span> on over 30,000 psychology papers and report 
         	  general inconsistency-prevalences over time and per journal.
         	</li>
         	<li>
-        	  <a href="https://psyarxiv.com/tcxaj/">The validity study</a><br> We 
-        	  compared <b>statcheck</b>'s performance with manual checks and assessed 
+        	  <a href="https://psyarxiv.com/tcxaj/">The validity study</a>: We 
+        	  compared <span class="statcheck-FAQ">statcheck</span>'s performance with manual checks and assessed 
         	  its accuracy in classifying results as consistent/inconsistent
         	</li>
         	<li>
         	  <a href="https://github.com/MicheleNuijten/statcheck">The GitHub 
-        	  page</a><br> Here you can find <b>statcheck</b>'s latest developments.
+        	  page</a>: Here you can find <span class="statcheck-FAQ">statcheck</span>'s latest developments.
         	</li>
         </ul>
       </div>

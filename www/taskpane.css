@@ -82,9 +82,9 @@ code {
 }
 
 .tooltip-inner {
-    max-width: 350px;
-    /* If max-width does not work, try using width instead */
-    width: 155%; 
+  max-width: 350px;
+  /* If max-width does not work, try using width instead */
+  width: 155%; 
 }
 
 
@@ -95,8 +95,6 @@ code {
 .test {
   font-size: 13px;
 }
-
-
 
 .fa-warning {
   color: #da8d56;
@@ -123,15 +121,6 @@ code {
 
 #settings-title {
   font-weight: bold;
-}
-
-#one_tailed + span {
-  line-height: 21px;
-}
-
-#one_tailed + label:after {
-  background: red !important;
-  color: #333;
 }
 
 /* FAQ */
