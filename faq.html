@@ -162,28 +162,14 @@
           statcheck flags result as an error when the 
           reported <i>p</i>-value does not match the recalculated 
           <i>p</i>-value. However, there may be cases in which you deliberately 
-          reported an inconsistent result. For example:
+          reported an inconsistent result. For example, when you conducted a 
+          one-tailed test, reported a Bonferroni corrected <i>p</i>-value, or 
+          corrected degrees of freedom.
         </p>
-        <ol>
-          <li>
-            you conducted a one-tailed test, but you did not explicitly state 
-            it was a one-tailed test using one of the keywords mentioned above
-          </li>
-          <li>
-            you used a Bonferroni correction on your <i>p</i>-value (i.e., 
-            multiplied your <i>p</i>-value by the number of tests) to correct 
-            for multiple testing
-          </li>
-          <li>
-            you corrected the degrees of freedom for a violation of an 
-            assumption (e.g., sphericity), but reported the unadjusted test 
-            statistic and <i>p</i>-value
-          </li>
-        </ol>
         <p>
           Of course it is also possible that statcheck really made a mistake 
           and erroneously flagged a result as inconsistent. If you think that 
-          statcheck wrongly flagged one of your results, please contact Michèle 
+          statcheck wrongly flagged one of your results, please contact us 
           (see below).
           
           For more information about statcheck's accuracy, see the next section.
