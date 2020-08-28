@@ -30,7 +30,20 @@
 		<p>Check your manuscript for statistical typos while you're writing.</p>
 	        <p><image src="screenshot.png" width="750px"/></p>
 
+		<h3>Contact</h3>
+		For questions about the statcheck Word add-in, contact <a href=https://willemsleegers.com>Willem Sleegers</a> or <a href=https://mbnuijten.com>Mich&egrave;le Nuijten</a>.
 		
+		<h3>Privacy statement</h3>
+		The statcheck MS Word add-in does not collect or transmit any user information or files.
+
+		<h3>End User License Agreement</h3>
+		See <a href=https://support.office.com/client/61994a3b-2c87-41c4-a88d-a6455efa362d?omkt=en-US>here</a>.
+
+		<h3>FAQ</h3>
+		For FAQ about MS Word add-ins, see <a href=https://support.microsoft.com/en-us/office/office-store-faq-a0d4f29c-13e2-4c56-a398-fe6fd3a6106d?ocmsassetid=ha102900784&omkt=en-us&ui=en-us&rs=en-us&ad=us>here</a>.
+<br>
+<br>
+<br>		
 	  </div>
 	<?php include 'footer.php'; ?>
     <!-- Bootstrap core JavaScript
