@@ -123,16 +123,16 @@ server <- function(input, output, session) {
           <h4 class="panel-title">')
         
         html <- c(html, paste0('<a class="test collapsible-link" data-toggle="collapse" 
-           href="#collapse', i, '">'))
+           href="#test-collapse', i, '">'))
         if (error) {
           html <- c(html, '<i class="icon fa fa-warning"></i>')
         }
         html <- c(html, test)
         html <- c(html, '</a></h4></div>')
-        html <- c(html, paste0('<div id="collapse', i, '" class="panel-collapse collapse">'))
+        html <- c(html, paste0('<div id="test-collapse', i, '" class="panel-collapse collapse">'))
         html <- c(html, '<div class="panel-body">')
         if (error) {
-          html <- c(html, '<p>It seems that the reported p-value is inconsistent 
+          html <- c(html, '<p>The reported p-value seems inconsistent 
                         with its test statistic and degrees of freedom.</p>')
         } else {
           html <- c(html, '<p>This statistical test is internally consistent.</p>')
