@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
+  <Id>8772b9c8-cf43-4081-9930-3f48616fcbd0</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>WillemSleegers</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="statcheck-local"/>
+  <Description DefaultValue="A spellchecker for statistics"/>
+  <IconUrl DefaultValue="https://willemsleegers.shinyapps.io/statcheck-word/assets/statcheck-80.png"/>
+  <HighResolutionIconUrl DefaultValue="https://willemsleegers.shinyapps.io/statcheck-word/assets/statcheck-160.png"/>
+  <SupportUrl DefaultValue="http://statcheck.io"/>
+  <AppDomains>
+    <AppDomain>willemsleegers.com</AppDomain>
+  </AppDomains>
+  <Hosts>
+    <Host Name="Document"/>
+  </Hosts>  
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://willemsleegers.shinyapps.io/statcheck-word/"/>
+  </DefaultSettings>
+  <Permissions>ReadWriteDocument</Permissions>
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <Hosts>
+      <Host xsi:type="Document">
+        <DesktopFormFactor>
+          <GetStarted>
+            <Title resid="GetStarted.Title"/>
+            <Description resid="GetStarted.Description"/>
+            <LearnMoreUrl resid="GetStarted.LearnMoreUrl"/>
+          </GetStarted>
+          <ExtensionPoint xsi:type="PrimaryCommandSurface">
+            <OfficeTab id="TabReviewWord">
+              <Group id="Group">
+                <Label resid="Group.Label" />
+                <Icon>
+                  <bt:Image size="16" resid="icon-16x16" />
+                  <bt:Image size="32" resid="icon-32x32" />
+                  <bt:Image size="64" resid="icon-64x64" />
+                  <bt:Image size="80" resid="icon-80x80" />
+                </Icon>
+                <Control xsi:type="Button" id="TaskpaneButton">
+                  <Label resid="TaskpaneButton.Label" />
+                  <Supertip>
+                    <Title resid="TaskpaneButton.Label" />
+                    <Description resid="TaskpaneButton.Tooltip" />
+                  </Supertip>
+                  <Icon>
+                  <bt:Image size="16" resid="icon-16x16" />
+                  <bt:Image size="32" resid="icon-32x32" />
+                  <bt:Image size="64" resid="icon-64x64" />
+                  <bt:Image size="80" resid="icon-80x80" />
+                </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>ShowTaskpaneButton</TaskpaneId>
+                    <SourceLocation resid="Taskpane.Url" />
+                  </Action>
+                </Control>
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+    <Resources>
+      <bt:Images>
+        <bt:Image id="icon-16x16" DefaultValue="https://willemsleegers.shinyapps.io/statcheck-word/assets/icon-16.png"/>
+        <bt:Image id="icon-32x32" DefaultValue="https://willemsleegers.shinyapps.io/statcheck-word/assets/icon-32.png"/>
+        <bt:Image id="icon-64x64" DefaultValue="https://willemsleegers.shinyapps.io/statcheck-word/assets/icon-64.png"/>
+        <bt:Image id="icon-80x80" DefaultValue="https://willemsleegers.shinyapps.io/statcheck-word/assets/icon-80.png"/>
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="http://statcheck.io" />
+        <bt:Url id="Taskpane.Url" DefaultValue="https://willemsleegers.shinyapps.io/statcheck-word/" />
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="GetStarted.Title" DefaultValue="Get started with statcheck!" />
+        <bt:String id="Group.Label" DefaultValue="Commands Group" />
+        <bt:String id="TaskpaneButton.Label" DefaultValue="statcheck" />
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="GetStarted.Description" DefaultValue="statcheck loaded succesfully. Click the 'statcheck' button to get started." />
+        <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Click to open statcheck" />
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+</OfficeApp>
