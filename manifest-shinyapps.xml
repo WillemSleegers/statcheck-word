@@ -4,7 +4,7 @@
   <Version>1.0.0.0</Version>
   <ProviderName>WillemSleegers</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
-  <DisplayName DefaultValue="statcheck-local"/>
+  <DisplayName DefaultValue="statcheck-shinyapps"/>
   <Description DefaultValue="A spellchecker for statistics"/>
   <IconUrl DefaultValue="https://willemsleegers.shinyapps.io/statcheck-word/assets/statcheck-80.png"/>
   <HighResolutionIconUrl DefaultValue="https://willemsleegers.shinyapps.io/statcheck-word/assets/statcheck-160.png"/>
@@ -45,11 +45,11 @@
                     <Description resid="TaskpaneButton.Tooltip" />
                   </Supertip>
                   <Icon>
-                  <bt:Image size="16" resid="icon-16x16" />
-                  <bt:Image size="32" resid="icon-32x32" />
-                  <bt:Image size="64" resid="icon-64x64" />
-                  <bt:Image size="80" resid="icon-80x80" />
-                </Icon>
+                    <bt:Image size="16" resid="icon-16x16" />
+                    <bt:Image size="32" resid="icon-32x32" />
+                    <bt:Image size="64" resid="icon-64x64" />
+                    <bt:Image size="80" resid="icon-80x80" />
+                  </Icon>
                   <Action xsi:type="ShowTaskpane">
                     <TaskpaneId>ShowTaskpaneButton</TaskpaneId>
                     <SourceLocation resid="Taskpane.Url" />
@@ -63,10 +63,10 @@
     </Hosts>
     <Resources>
       <bt:Images>
-        <bt:Image id="icon-16x16" DefaultValue="https://willemsleegers.shinyapps.io/statcheck-word/assets/icon-16.png"/>
-        <bt:Image id="icon-32x32" DefaultValue="https://willemsleegers.shinyapps.io/statcheck-word/assets/icon-32.png"/>
-        <bt:Image id="icon-64x64" DefaultValue="https://willemsleegers.shinyapps.io/statcheck-word/assets/icon-64.png"/>
-        <bt:Image id="icon-80x80" DefaultValue="https://willemsleegers.shinyapps.io/statcheck-word/assets/icon-80.png"/>
+        <bt:Image id="icon-16x16" DefaultValue="https://willemsleegers.shinyapps.io/statcheck-word/assets/statcheck-16.png"/>
+        <bt:Image id="icon-32x32" DefaultValue="https://willemsleegers.shinyapps.io/statcheck-word/assets/statcheck-32.png"/>
+        <bt:Image id="icon-64x64" DefaultValue="https://willemsleegers.shinyapps.io/statcheck-word/assets/statcheck-64.png"/>
+        <bt:Image id="icon-80x80" DefaultValue="https://willemsleegers.shinyapps.io/statcheck-word/assets/statcheck-80.png"/>
       </bt:Images>
       <bt:Urls>
         <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="http://statcheck.io" />

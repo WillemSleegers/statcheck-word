@@ -5,6 +5,6 @@ account: willemsleegers
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 2719916
-bundleId: 3567525
+bundleId: 3573095
 url: https://willemsleegers.shinyapps.io/statcheck-word/
-when: 1598628186.94457
+when: 1598810194.06477
