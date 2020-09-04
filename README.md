@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/264169562.svg)](https://zenodo.org/badge/latestdoi/264169562)
+
 # The statcheck Word add-in
 The statcheck Word add-in is a "spellchecker" for statistics. It allows you to 
 check your manuscript for statistical reporting inconsistencies as you write!
