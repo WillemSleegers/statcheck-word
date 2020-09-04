@@ -6,12 +6,9 @@
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="statcheck-local"/>
   <Description DefaultValue="A spellchecker for statistics"/>
-  <IconUrl DefaultValue="http://127.0.0.1:7775/assets/statcheck-80.png"/>
-  <HighResolutionIconUrl DefaultValue="http://127.0.0.1:7775/assets/statcheck-160.png"/>
+  <IconUrl DefaultValue="http://127.0.0.1:7775/assets/icon-80.png"/>
+  <HighResolutionIconUrl DefaultValue="http://127.0.0.1:7775/assets/icon-160.png"/>
   <SupportUrl DefaultValue="http://statcheck.io"/>
-  <AppDomains>
-    <AppDomain>willemsleegers.com</AppDomain>
-  </AppDomains>
   <Hosts>
     <Host Name="Document"/>
   </Hosts>  
@@ -63,10 +60,10 @@
     </Hosts>
     <Resources>
       <bt:Images>
-        <bt:Image id="icon-16x16" DefaultValue="http://127.0.0.1:7775/assets/statcheck-16.png"/>
-        <bt:Image id="icon-32x32" DefaultValue="http://127.0.0.1:7775/assets/statcheck-32.png"/>
-        <bt:Image id="icon-64x64" DefaultValue="http://127.0.0.1:7775/assets/statcheck-64.png"/>
-        <bt:Image id="icon-80x80" DefaultValue="http://127.0.0.1:7775/assets/statcheck-80.png"/>
+        <bt:Image id="icon-16x16" DefaultValue="http://127.0.0.1:7775/assets/icon-16.png"/>
+        <bt:Image id="icon-32x32" DefaultValue="http://127.0.0.1:7775/assets/icon-32.png"/>
+        <bt:Image id="icon-64x64" DefaultValue="http://127.0.0.1:7775/assets/icon-64.png"/>
+        <bt:Image id="icon-80x80" DefaultValue="http://127.0.0.1:7775/assets/icon-80.png"/>
       </bt:Images>
       <bt:Urls>
         <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="http://statcheck.io" />
