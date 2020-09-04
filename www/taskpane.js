@@ -62,7 +62,7 @@ function cite_reference() {
     
     var doc = context.document;
     var originalRange = doc.getSelection();
-    originalRange.insertText("Sleegers, W.W.A. & Nuijten, M.B. (2020) statcheck for Word. Version 0.1. https://doi.org/blabla", "End");
+    originalRange.insertText("Sleegers, W. W. A., & Nuijten, M. B. (2020). statcheck: A spellchecker for statistics in Microsoft Word (0.1) [Computer software]. https://doi.org/10.5281/zenodo.4015187", "End");
 
     return context.sync();
   })
@@ -76,10 +76,12 @@ function cite_reference() {
 
 function copy_bib() {
   /* Get the text field */
-  var text = `@misc{sleegers2020,
-    title = {Statcheck for {{Word}}},
-    author = {Sleegers, Willem W. A. and Nuijten, Mich{\`e}le B.},
-    year = {2020}
+  var text = `@software{sleegers2020,
+    title = {Statcheck: {{A}} Spellchecker for Statistics in {{Microsoft Word}}},
+    author = {Sleegers, Willem W. A. and Nuijten, Michèle B.},
+    date = {2020},
+    url = {https://doi.org/10.5281/zenodo.4015187},
+    version = {0.1}
   }`;
  var textArea = document.createElement("textarea");
 
@@ -150,11 +152,4 @@ async function go_to_test(button) {
     var range = results.getFirst();
     range.select();
   });
-}
-
-function showSettings() {
-  console.log("Showing settings");
-  var settings = document.getElementById("settings-controls");
-  
-  settings.classList.toggle("settings-active");
 }
