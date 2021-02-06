@@ -1,8 +1,8 @@
-[![DOI](https://zenodo.org/badge/264169562.svg)](https://zenodo.org/badge/latestdoi/264169562)
-
 <p align="center">
   <img width="400px" src="https://github.com/WillemSleegers/statcheck-word/raw/master/www/assets/statcheck.png"</img>
 </p>
+
+[![DOI](https://zenodo.org/badge/264169562.svg)](https://zenodo.org/badge/latestdoi/264169562)
 
 # statcheck: a spellchecker for statistics in Microsoft Word
 
