@@ -2,7 +2,9 @@
 
 # statcheck: a spellchecker for statistics in Microsoft Word
 
+<p align="center">
 ![statcheck logo](https://github.com/WillemSleegers/statcheck-word/raw/master/www/assets/statcheck.png)
+</p>
 
 The statcheck Word add-in is a "spellchecker" for statistics. It allows you to
 check your manuscript for statistical reporting inconsistencies as you write!
