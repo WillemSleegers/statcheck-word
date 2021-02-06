@@ -1,10 +1,8 @@
-[![DOI](https://zenodo.org/badge/264169562.svg)](https://zenodo.org/badge/latestdoi/264169562)
+<p align="center">
+  <img width="400px" src="https://github.com/WillemSleegers/statcheck-word/raw/master/www/assets/statcheck.png"</img>
+</p>
 
 # statcheck: a spellchecker for statistics in Microsoft Word
-
-<p align="center">
-![statcheck logo](https://github.com/WillemSleegers/statcheck-word/raw/master/www/assets/statcheck.png)
-</p>
 
 The statcheck Word add-in is a "spellchecker" for statistics. It allows you to
 check your manuscript for statistical reporting inconsistencies as you write!
@@ -57,7 +55,6 @@ You can also contact us on Twitter via
 [@michelenuijten](https://twitter.com/MicheleNuijten).
 
 # Additional resources
-
 - [The statcheck manual](https://rpubs.com/michelenuijten/statcheckmanual):
   Detailed instruction manual with information on what statcheck can and
   cannot do, information on how to install and use the statcheck R package,
@@ -97,3 +94,5 @@ or contact us (see the Questions and comments section)
 
 The statcheck Word add-in is distributed under the MIT license. See the file
 copyright.txt in this repository for more information.
+
+[![DOI](https://zenodo.org/badge/264169562.svg)](https://zenodo.org/badge/latestdoi/264169562)
