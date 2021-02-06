@@ -1,8 +1,10 @@
 [![DOI](https://zenodo.org/badge/264169562.svg)](https://zenodo.org/badge/latestdoi/264169562)
 
-# statcheck: a spellchecker for statistics in Microsoft Word
+<p align="center">
+  <img width="400px" src="https://github.com/WillemSleegers/statcheck-word/raw/master/www/assets/statcheck.png"</img>
+</p>
 
-![statcheck logo](https://github.com/WillemSleegers/statcheck-word/raw/master/www/assets/statcheck.png)
+# statcheck: a spellchecker for statistics in Microsoft Word
 
 The statcheck Word add-in is a "spellchecker" for statistics. It allows you to
 check your manuscript for statistical reporting inconsistencies as you write!
