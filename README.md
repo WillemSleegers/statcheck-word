@@ -2,8 +2,6 @@
   <img width="400px" src="https://github.com/WillemSleegers/statcheck-word/raw/master/www/assets/statcheck.png"</img>
 </p>
 
-[![DOI](https://zenodo.org/badge/264169562.svg)](https://zenodo.org/badge/latestdoi/264169562)
-
 # statcheck: a spellchecker for statistics in Microsoft Word
 
 The statcheck Word add-in is a "spellchecker" for statistics. It allows you to
@@ -97,3 +95,5 @@ or contact us (see the Questions and comments section)
 
 The statcheck Word add-in is distributed under the MIT license. See the file
 copyright.txt in this repository for more information.
+
+[![DOI](https://zenodo.org/badge/264169562.svg)](https://zenodo.org/badge/latestdoi/264169562)
