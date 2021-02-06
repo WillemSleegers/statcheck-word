@@ -1,7 +1,7 @@
-ui <- fluidPage(
+ui <- shiny::fluidPage(
   
   # Include JS and CSS files
-  tags$head(
+  shiny::tags$head(
     tags$script(
         src = "https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"
       ),
