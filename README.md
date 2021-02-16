@@ -41,8 +41,8 @@ the Office Add-in Store after testing is complete. You can find the Office Add-i
 Word document. Once the statcheck add-in is available, you can download the add-in from this store and
 immediately use it.
 
-If you want to use the development version of the add-in, please see the
-Development section in the Wiki here on Github.
+If you want to use the development version of the add-in, for example to help us test the add-in, please see the
+Testing section in the Wiki here on Github.
 
 # Questions and comments
 
