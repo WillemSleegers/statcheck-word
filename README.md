@@ -2,13 +2,13 @@
   <img width="400px" src="https://github.com/WillemSleegers/statcheck-word/raw/master/www/assets/statcheck.png"</img>
 </p>
 
-# statcheck: a spellchecker for statistics in Microsoft Word
+# statcheck: A spellchecker for statistics in Microsoft Word
 
 The statcheck Word add-in is a "spellchecker" for statistics. It allows you to
 check your manuscript for statistical reporting inconsistencies as you write!
 
-Statcheck searches the text in your Word document for null hypothesis
-significance tests, for example, _t_(28) = 2.2, _p_ = .063. Statcheck will give
+statcheck searches the text in your Word document for null hypothesis
+significance tests, for example, _t_(28) = 2.2, _p_ = .063. After going through your document, statcheck will produce 
 an overview of all the tests it found in the text.
 
 Next, it recalculates the p-value based on the test statistic and degrees of
@@ -36,39 +36,23 @@ For more information on the requirements, see [here](https://docs.microsoft.com/
 
 # Getting started
 
-Once testing is complete, the statcheck Word add-in will be made available in
-the Office Add-in Store. You can find this store in the Insert tab of your
-Word document. Once available, you can download the add-in from this story and
+The statcheck Word add-in will be made available in
+the Office Add-in Store after testing is complete. You can find the Office Add-in Store in the Insert tab of your
+Word document. Once the statcheck add-in is available, you can download the add-in from this store and
 immediately use it.
 
 If you want to use the development version of the add-in, please see the
-Development section below.
+Development section in the Wiki here on Github.
 
 # Questions and comments
 
 We'd love to get your feedback about the statcheck Word add-in! Please send us
 your questions and suggestions by creating an Issue here on Github; it's really
-easy to [do](https://docs.github.com/en/github/managing-your-work-on-github/creating-an-issue)!
+easy to do!
 
 You can also contact us on Twitter via
 [@willemsleegers](https://twitter.com/willemsleegers) and
 [@michelenuijten](https://twitter.com/MicheleNuijten).
-
-# Development
-
-Can't wait to take the statcheck add-in out for a spin? Follow these steps to
-install and run the add-in:
-
-1. Download the files of this Github repository to your computer
-2. Open the statcheck-word.Rproj file and then the app.r script
-3. Run the code in the Setup section and then launch the app by clicking 'Run App'
-4. Sideload the manifest-local.xml file (for instructions on how to do this, see
-   [here](https://docs.microsoft.com/en-us/office/dev/add-ins/testing/sideload-an-office-add-in-on-ipad-and-mac))
-5. Open the add-in by clicking on the dropdown arrow next to 'My Add-ins' in the
-   Insert tab of your Word document
-
-If you have any questions about this, please don't hesitate to create an Issue
-or contact us (see the Questions and comments section)
 
 # Copyright
 
