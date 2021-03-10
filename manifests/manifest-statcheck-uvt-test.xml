@@ -4,7 +4,7 @@
   <Version>1.0.0.0</Version>
   <ProviderName>WillemSleegers</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
-  <DisplayName DefaultValue="statcheck-uvt-local"/>
+  <DisplayName DefaultValue="statcheck-uvt-test"/>
   <Description DefaultValue="A spellchecker for statistics"/>
   <IconUrl DefaultValue="https://r.uvt.nl/statcheck-word/assets/icon-80.png"/>
   <HighResolutionIconUrl DefaultValue="https://r.uvt.nl/statcheck-word/assets/icon-160.png"/>
